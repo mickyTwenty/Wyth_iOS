@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="HorizontalScrollCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DP-5t-XCK">
+                        <rect key="frame" x="5" y="5" width="310" height="131.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxM-kS-QSp">
+                                <rect key="frame" x="5" y="5" width="300" height="121.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Preferereded :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h95-9e-DET">
+                                        <rect key="frame" x="5" y="5" width="96.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Dfo-6H-LSf">
+                                        <rect key="frame" x="5" y="32.5" width="290" height="84"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="tFB-Wu-aoJ">
+                                            <size key="itemSize" width="180" height="90"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Dfo-6H-LSf" secondAttribute="bottom" constant="5" id="7p5-cT-bRB"/>
+                                    <constraint firstItem="h95-9e-DET" firstAttribute="leading" secondItem="OxM-kS-QSp" secondAttribute="leading" constant="5" id="Ntr-KD-jqh"/>
+                                    <constraint firstItem="h95-9e-DET" firstAttribute="top" secondItem="OxM-kS-QSp" secondAttribute="top" constant="5" id="R85-vj-Vbo"/>
+                                    <constraint firstItem="Dfo-6H-LSf" firstAttribute="leading" secondItem="OxM-kS-QSp" secondAttribute="leading" constant="5" id="ZQc-6L-MDn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dfo-6H-LSf" secondAttribute="trailing" constant="5" id="aLh-B8-VOS"/>
+                                    <constraint firstItem="Dfo-6H-LSf" firstAttribute="top" secondItem="h95-9e-DET" secondAttribute="bottom" constant="10" id="aYb-ze-6dq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OxM-kS-QSp" firstAttribute="top" secondItem="9DP-5t-XCK" secondAttribute="top" constant="5" id="3ul-xb-QWP"/>
+                            <constraint firstAttribute="bottom" secondItem="OxM-kS-QSp" secondAttribute="bottom" constant="5" id="6AB-yS-Dt9"/>
+                            <constraint firstItem="OxM-kS-QSp" firstAttribute="leading" secondItem="9DP-5t-XCK" secondAttribute="leading" constant="5" id="9gp-cp-Unv"/>
+                            <constraint firstAttribute="trailing" secondItem="OxM-kS-QSp" secondAttribute="trailing" constant="5" id="HZX-rf-MDb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="9DP-5t-XCK" secondAttribute="bottom" constant="5" id="Hii-mm-Jib"/>
+                    <constraint firstAttribute="trailing" secondItem="9DP-5t-XCK" secondAttribute="trailing" constant="5" id="KqB-Or-IDq"/>
+                    <constraint firstItem="9DP-5t-XCK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="RKl-hv-lLX"/>
+                    <constraint firstItem="9DP-5t-XCK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="fXX-4c-aBx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="Dfo-6H-LSf" id="NMr-fc-7K3"/>
+                <outlet property="titleLabel" destination="h95-9e-DET" id="qZW-0b-Z4W"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="-32"/>
+        </tableViewCell>
+    </objects>
+</document>

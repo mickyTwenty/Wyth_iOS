@@ -1,0 +1,248 @@
+//
+//  DrawRoute.swift
+//  SeatUs
+//
+//  Created by Qazi Naveed on 4/4/18.
+//  Copyright © 2018 Qazi Naveed. All rights reserved.
+//
+
+import UIKit
+import GoogleMaps
+
+class DrawRoute: NSObject {
+    
+    var selectedRoute : Route! = Route()
+    var serviceStatus: Bool! = false
+    var gmsMapView: GMSMapView!
+    
+    var polyline = GMSPolyline()
+    var animationPolyline = GMSPolyline()
+    var path = GMSPath()
+    var animationPath = GMSMutablePath()
+    var i: UInt = 0
+    var timer: Timer!
+    
+    var addingFreinds : AddingFreinds? = .isComingForDriverPassengerBoth
+    
+    var contentArray : [Route]? = []
+    
+    func getRoutes(completionHandler: @escaping (_ contentArray : [Route]?) -> ()){
+        
+        let originCoordinates = DataPersister.getOriginCoordinates()
+        let destinationCoordinates = DataPersister.getDestinationCoordinates()
+        
+        if !((originCoordinates?.isEmpty)!) && !((destinationCoordinates?.isEmpty)!){
+            
+            PostTrip.getPossibleRoutes(fromOrigin: originCoordinates!, toDestination: destinationCoordinates!, completionHandler: { (routeArr, active, status, error) in
+                
+                self.contentArray = routeArr
+                if (self.contentArray?.count)! > 0 {
+                    self.drawRouteOnMapWithObject(route: self.contentArray![0])
+                }
+                else{
+                    self.invalidateTimer()
+                }
+                
+                completionHandler(self.contentArray)
+                
+            })
+        }
+        
+        
+    }
+    
+    func drawRouteOnMapWithObject(route:Route){
+        
+        // clear old poly line
+        gmsMapView.clear()
+        invalidateTimer()
+        selectedRoute = route
+        
+        let geocoder = GMSGeocoder()
+        
+        // Lewis University
+        let position1 = CLLocationCoordinate2D(latitude: 41.607505, longitude: -88.123169)
+        let marker1 = GMSMarker(position: position1)
+        geocoder.reverseGeocodeCoordinate(position1) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Walmart - "
+                let fullAddress = addressName + address
+                
+                marker1.userData = fullAddress
+                marker1.title = fullAddress
+                marker1.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker1.icon = UIImage(named: "marker_walmart")
+                
+            }
+        }
+        marker1.map = gmsMapView
+        
+        let position2 = CLLocationCoordinate2D(latitude: 41.6026022, longitude: -88.0826332)
+        let marker2 = GMSMarker(position: position2)
+        geocoder.reverseGeocodeCoordinate(position2) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Lewis University Bookstore - "
+                let fullAddress = addressName + address
+                
+                marker2.userData = fullAddress
+                marker2.title = fullAddress
+                marker2.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker2.icon = UIImage(named: "marker_school")
+            }
+        }
+        marker2.map = gmsMapView
+        
+        // U of I
+        let position3 = CLLocationCoordinate2D(latitude: 40.112070, longitude: -88.159980)
+        let marker3 = GMSMarker(position: position3)
+        geocoder.reverseGeocodeCoordinate(position3) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Walmart - "
+                let fullAddress = addressName + address
+                
+                marker3.userData = fullAddress
+                marker3.title = fullAddress
+                marker3.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker3.icon = UIImage(named: "marker_walmart")
+                
+            }
+        }
+        marker3.map = gmsMapView
+        
+        let position4 = CLLocationCoordinate2D(latitude: 40.103531, longitude: -88.238302)
+        let marker4 = GMSMarker(position: position4)
+        geocoder.reverseGeocodeCoordinate(position4) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Wassaja Hall - "
+                let fullAddress = addressName + address
+                
+                marker4.userData = fullAddress
+                marker4.title = fullAddress
+                marker4.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker4.icon = UIImage(named: "marker_school")
+            }
+        }
+        marker4.map = gmsMapView
+        
+        // U of W
+        let position5 = CLLocationCoordinate2D(latitude: 43.074992, longitude: -89.453643)
+        let marker5 = GMSMarker(position: position5)
+        geocoder.reverseGeocodeCoordinate(position5) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Target - "
+                let fullAddress = addressName + address
+                
+                marker5.userData = fullAddress
+                marker5.title = fullAddress
+                marker5.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker5.icon = UIImage(named: "marker_target")
+                
+            }
+        }
+        marker5.map = gmsMapView
+        
+        let position6 = CLLocationCoordinate2D(latitude: 43.077484, longitude: -89.415662)
+        let marker6 = GMSMarker(position: position6)
+        geocoder.reverseGeocodeCoordinate(position6) { response, error in
+            if let location = response?.firstResult() {
+                
+                let lines = location.lines! as [String]
+                let address = lines.joined(separator: "\n")
+                let addressName = "Sullivan Residence Hall - "
+                let fullAddress = addressName + address
+                
+                marker6.userData = fullAddress
+                marker6.title = fullAddress
+                marker6.snippet = "Tap HERE to set as Origin \nHOLD to set as Destination"
+                marker6.icon = UIImage(named: "marker_school")
+            }
+        }
+        marker6.map = gmsMapView
+        
+        draw()
+    }
+    
+    func invalidateTimer(){
+        
+        if (self.timer != nil){
+            if (self.timer.isValid){
+                self.timer.invalidate()
+                gmsMapView.clear()
+                self.path = GMSPath()
+                self.animationPath = GMSMutablePath()
+                self.animationPolyline.map = nil
+                self.i = 0
+            }
+        }
+    }
+    
+    @objc func draw(){
+        
+        startAnimation()
+        
+        focusMapToShowAllMarkersZoomValue(route: selectedRoute)
+        
+    }
+    
+    func startAnimation(){
+        
+        self.path = GMSPath(fromEncodedPath: (selectedRoute.overViewPolyLine!))!
+        self.polyline.path = path
+        self.polyline.strokeColor = ApplicationConstants.GreenColorBright
+        self.polyline.strokeWidth = CGFloat(ApplicationConstants.strokeWidth)
+        
+        
+        self.polyline.map = gmsMapView
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animatePolylinePath), userInfo: nil, repeats: true)
+        
+    }
+    
+    func focusMapToShowAllMarkersZoomValue(route:Route){
+        
+        let bounds = GMSCoordinateBounds(path: self.path)
+        let update = GMSCameraUpdate.fit(bounds)
+        gmsMapView.moveCamera(update)
+        
+        let legs = route.legsArray![0]
+        let steps =  legs.stepsArray![0]
+        
+        let legsEnd = (route.legsArray?.last)!
+        let stepsEnd =  (legsEnd.stepsArray?.last)!
+        
+        Utility.drawPin(map: gmsMapView, lat:String(steps.latStartValue!), lon: String(steps.longStartValue!), isDropOff: false)
+        Utility.drawPin(map: gmsMapView, lat:String(stepsEnd.latEndValue!), lon: String(stepsEnd.longEndValue!), isDropOff: true)
+        
+    }
+    
+    @objc func animatePolylinePath() {
+        if (self.i < self.path.count()) {
+            self.animationPath.add(self.path.coordinate(at: self.i))
+            self.animationPolyline.path = self.animationPath
+            self.animationPolyline.strokeColor = ApplicationConstants.GreenColor
+            self.animationPolyline.strokeWidth = CGFloat(ApplicationConstants.strokeWidth)
+            self.animationPolyline.map = self.gmsMapView
+            self.i += 1
+        }
+        else {
+            self.i = 0
+            self.animationPath = GMSMutablePath()
+            self.animationPolyline.map = nil
+        }
+    }
+}

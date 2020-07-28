@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="KGk-i7-Jjw" customClass="MessagingInfoCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="468" height="115.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1V-WC-3ur" customClass="ProfileImageView" customModule="SeatUs" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="70" height="70"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="B1T-KU-RjY"/>
+                            <constraint firstAttribute="height" constant="70" id="XIU-v1-3bl"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSx-cL-SzD" userLabel="RatingView" customClass="RatingView" customModule="SeatUs" customModuleProvider="target">
+                        <rect key="frame" x="6" y="85" width="78" height="16.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="asds asdsadsadhkljajdksad sakfdhfh fdh " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-rw-auB" userLabel="DateValue">
+                        <rect key="frame" x="126.5" y="65" width="321.5" height="13"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7II-b4-SMj">
+                        <rect key="frame" x="90" y="46" width="72.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEd-qA-PvC">
+                        <rect key="frame" x="90" y="83" width="83" height="22"/>
+                        <state key="normal" image="ride_detail"/>
+                        <connections>
+                            <action selector="onClickRideDetail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zMG-Qd-E7W"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zds-K8-tDd">
+                        <rect key="frame" x="90" y="64" width="32.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="asds asdsadsadhkljajdksad sakfdhfh fdh " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ6-mY-sbV" userLabel="OriginValue">
+                        <rect key="frame" x="133.5" y="29" width="314.5" height="13"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQH-XY-dWv" userLabel="TripName">
+                        <rect key="frame" x="90" y="10" width="43.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="asds asdsadsadhkljajdksad sakfdhfh fdh  aSas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8e-hF-bm4" userLabel="DestinationValue">
+                        <rect key="frame" x="165.5" y="47" width="282.5" height="13"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text=" sdas dasd asd asdas dasd asdas dsad sadas dasd asdas dasdas dasda sdasd dasd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKk-ZO-neb" userLabel="TripNameValue">
+                        <rect key="frame" x="133.5" y="11.5" width="314.5" height="13"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Origin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGb-hX-o75">
+                        <rect key="frame" x="90" y="28" width="40.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fQ-nTc">
+                        <rect key="frame" x="203" y="82" width="85" height="24"/>
+                        <state key="normal" image="group_chat"/>
+                        <connections>
+                            <action selector="onClickGroupChat:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e1K-Ss-oj0"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LKk-ZO-neb" secondAttribute="trailing" constant="20" id="2Qh-3e-ZGx"/>
+                    <constraint firstItem="a8e-hF-bm4" firstAttribute="leading" secondItem="7II-b4-SMj" secondAttribute="trailing" constant="3" id="48a-IV-OZW"/>
+                    <constraint firstItem="a8e-hF-bm4" firstAttribute="trailing" secondItem="LKk-ZO-neb" secondAttribute="trailing" id="5WV-VN-k5R"/>
+                    <constraint firstItem="FSx-cL-SzD" firstAttribute="centerX" secondItem="E1V-WC-3ur" secondAttribute="centerX" id="6Ml-iC-9cv"/>
+                    <constraint firstItem="qZ6-mY-sbV" firstAttribute="top" secondItem="LKk-ZO-neb" secondAttribute="bottom" constant="5" id="8jr-hC-kBD"/>
+                    <constraint firstItem="RL7-fQ-nTc" firstAttribute="centerY" secondItem="zEd-qA-PvC" secondAttribute="centerY" id="AkM-X8-ig8"/>
+                    <constraint firstItem="KQH-XY-dWv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Cpn-dE-noI"/>
+                    <constraint firstItem="zEd-qA-PvC" firstAttribute="top" secondItem="Apj-rw-auB" secondAttribute="bottom" constant="5" id="G68-lB-5Py"/>
+                    <constraint firstAttribute="bottom" secondItem="zEd-qA-PvC" secondAttribute="bottom" constant="10.5" id="HzE-58-TqY"/>
+                    <constraint firstItem="FSx-cL-SzD" firstAttribute="top" secondItem="E1V-WC-3ur" secondAttribute="bottom" constant="5" id="I6d-rZ-IaM"/>
+                    <constraint firstItem="zds-K8-tDd" firstAttribute="leading" secondItem="KQH-XY-dWv" secondAttribute="leading" id="JfP-7N-1xM"/>
+                    <constraint firstItem="qZ6-mY-sbV" firstAttribute="leading" secondItem="TGb-hX-o75" secondAttribute="trailing" constant="3" id="Kel-bX-qre"/>
+                    <constraint firstItem="E1V-WC-3ur" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KtM-em-bZp"/>
+                    <constraint firstItem="zEd-qA-PvC" firstAttribute="leading" secondItem="KQH-XY-dWv" secondAttribute="leading" id="L9V-SA-PV0"/>
+                    <constraint firstItem="TGb-hX-o75" firstAttribute="leading" secondItem="KQH-XY-dWv" secondAttribute="leading" id="QlC-2a-OPF"/>
+                    <constraint firstItem="E1V-WC-3ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TmF-hf-PBJ"/>
+                    <constraint firstItem="LKk-ZO-neb" firstAttribute="leading" secondItem="KQH-XY-dWv" secondAttribute="trailing" id="Vbx-wd-j23"/>
+                    <constraint firstItem="RL7-fQ-nTc" firstAttribute="leading" secondItem="zEd-qA-PvC" secondAttribute="trailing" constant="30" id="XJ0-kr-pej"/>
+                    <constraint firstItem="Apj-rw-auB" firstAttribute="leading" secondItem="zds-K8-tDd" secondAttribute="trailing" constant="4" id="Zi7-8c-7aX"/>
+                    <constraint firstItem="KQH-XY-dWv" firstAttribute="centerY" secondItem="LKk-ZO-neb" secondAttribute="centerY" id="ard-rL-Yxb"/>
+                    <constraint firstItem="7II-b4-SMj" firstAttribute="leading" secondItem="KQH-XY-dWv" secondAttribute="leading" id="auL-r0-goD"/>
+                    <constraint firstItem="zds-K8-tDd" firstAttribute="centerY" secondItem="Apj-rw-auB" secondAttribute="centerY" id="brM-dz-77q"/>
+                    <constraint firstItem="7II-b4-SMj" firstAttribute="centerY" secondItem="a8e-hF-bm4" secondAttribute="centerY" id="gAw-gP-ZfR"/>
+                    <constraint firstItem="Apj-rw-auB" firstAttribute="trailing" secondItem="LKk-ZO-neb" secondAttribute="trailing" id="huJ-w2-knh"/>
+                    <constraint firstItem="Apj-rw-auB" firstAttribute="top" secondItem="a8e-hF-bm4" secondAttribute="bottom" constant="5" id="l4q-mf-uOf"/>
+                    <constraint firstItem="KQH-XY-dWv" firstAttribute="leading" secondItem="E1V-WC-3ur" secondAttribute="trailing" constant="10" id="rup-pO-zg7"/>
+                    <constraint firstItem="TGb-hX-o75" firstAttribute="centerY" secondItem="qZ6-mY-sbV" secondAttribute="centerY" id="t2a-Zc-RIn"/>
+                    <constraint firstItem="a8e-hF-bm4" firstAttribute="top" secondItem="qZ6-mY-sbV" secondAttribute="bottom" constant="5" id="uTa-NW-1RO"/>
+                    <constraint firstItem="qZ6-mY-sbV" firstAttribute="trailing" secondItem="LKk-ZO-neb" secondAttribute="trailing" id="yNZ-MZ-zDH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLable" destination="Apj-rw-auB" id="36Q-Gu-1CZ"/>
+                <outlet property="destinationLable" destination="a8e-hF-bm4" id="vsh-1w-K0G"/>
+                <outlet property="originLable" destination="qZ6-mY-sbV" id="XIF-4z-vkH"/>
+                <outlet property="profileImageView" destination="E1V-WC-3ur" id="39z-U9-hn4"/>
+                <outlet property="ratingView" destination="FSx-cL-SzD" id="ybX-Bb-iQF"/>
+                <outlet property="tripNameLable" destination="LKk-ZO-neb" id="1wk-W5-FNC"/>
+            </connections>
+            <point key="canvasLocation" x="172" y="77"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="group_chat" width="85" height="24"/>
+        <image name="ride_detail" width="83" height="22"/>
+    </resources>
+</document>

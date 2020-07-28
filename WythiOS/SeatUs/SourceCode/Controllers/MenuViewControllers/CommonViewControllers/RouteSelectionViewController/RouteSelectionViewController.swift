@@ -1,0 +1,440 @@
+//
+//  RouteSelectionViewController.swift
+//  SeatUs
+//
+//  Created by Syed Muhammad Muzzammil on 21/11/2017.
+//  Copyright © 2017 Qazi Naveed. All rights reserved.
+//
+
+import UIKit
+import GoogleMaps
+
+class RouteSelectionViewController: BaseViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tripButton: UIButton!
+
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var gmsMapView: GMSMapView!
+    var selectedRoute : Route! = Route()
+    var serviceStatus: Bool! = false
+    var errorCode = ""
+    
+    var polyline = GMSPolyline()
+    var animationPolyline = GMSPolyline()
+    var path = GMSPath()
+    var animationPath = GMSMutablePath()
+    var i: UInt = 0
+    var timer: Timer!
+
+    var addingFreinds : AddingFreinds? = .isComingForDriverPassengerBoth
+
+    var contentArray : [Route]? = []
+    let cellName = RouteSelectionCell.nameOfClass()
+    let cellHeight = 80
+    let maxCellDisplay = 3
+    var paymentType = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerCustomCell()
+        getRoutes()
+        setButtonDependentOnUserSelectedType(button: tripButton)
+    }
+    
+    
+    func drawRouteOnMapWithObject(route:Route){
+        
+        // clear old poly line
+        //gmsMapView.clear()
+        invalidateTimer()
+        selectedRoute = route
+        draw()
+    }
+    func setButtonDependentOnUserSelectedType(button:UIButton){
+        switch (Utility.getUserType()){
+            
+        case UserType.UserDriver:
+            button.setImage(UIImage(named: AssetsName.PostRideNowImageName), for: .normal)
+            break
+            
+        case UserType.UserNormal:
+            break
+            
+        default :
+            break
+        }
+    }
+    @objc func draw(){
+        
+        startAnimation()
+        
+        focusMapToShowAllMarkersZoomValue(route: selectedRoute)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        invalidateTimer()
+    }
+    
+    func startAnimation(){
+        
+        self.path = GMSPath(fromEncodedPath: (selectedRoute.overViewPolyLine!))!
+        self.polyline.path = path
+        self.polyline.strokeColor = ApplicationConstants.GreenColorBright
+        self.polyline.strokeWidth = CGFloat(ApplicationConstants.strokeWidth)
+        
+        
+        self.polyline.map = gmsMapView
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animatePolylinePath), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func animatePolylinePath() {
+        if (self.i < self.path.count()) {
+            self.animationPath.add(self.path.coordinate(at: self.i))
+            self.animationPolyline.path = self.animationPath
+            self.animationPolyline.strokeColor = ApplicationConstants.GreenColor
+            self.animationPolyline.strokeWidth = CGFloat(ApplicationConstants.strokeWidth)
+            self.animationPolyline.map = self.gmsMapView
+            self.i += 1
+        }
+        else {
+            self.i = 0
+            self.animationPath = GMSMutablePath()
+            self.animationPolyline.map = nil
+        }
+    }
+    
+    func invalidateTimer(){
+        
+        if (self.timer != nil){
+            if (self.timer.isValid){
+                self.timer.invalidate()
+                //gmsMapView.clear()
+                self.path = GMSPath()
+                self.animationPath = GMSMutablePath()
+                self.animationPolyline.map = nil
+                self.i = 0
+            }
+        }
+    }
+    
+    func focusMapToShowAllMarkersZoomValue(route:Route){
+        
+        let bounds = GMSCoordinateBounds(path: self.path)
+        let update = GMSCameraUpdate.fit(bounds)
+        gmsMapView.moveCamera(update)
+
+        let legs = route.legsArray![0]
+        let steps =  legs.stepsArray![0]
+        
+        let legsEnd = (route.legsArray?.last)!
+        let stepsEnd =  (legsEnd.stepsArray?.last)!
+
+        Utility.drawPin(map: gmsMapView, lat:String(steps.latStartValue!), lon: String(steps.longStartValue!), isDropOff: false)
+        Utility.drawPin(map: gmsMapView, lat:String(stepsEnd.latEndValue!), lon: String(stepsEnd.longEndValue!), isDropOff: true)
+
+    }
+    
+    func getRoutes(){
+        
+        let originCoordinates = DataPersister.getOriginCoordinates()
+        let destinationCoordinates = DataPersister.getDestinationCoordinates()
+        
+        if !((originCoordinates?.isEmpty)!) && !((destinationCoordinates?.isEmpty)!){
+            
+            PostTrip.getPossibleRoutes(fromOrigin: originCoordinates!, toDestination: destinationCoordinates!, completionHandler: { (routeArr, active, status, error) in
+                
+                self.contentArray = routeArr
+                if (self.contentArray?.count)! > 0 {
+                    self.drawRouteOnMapWithObject(route: self.contentArray![0])
+                    self.setDataOnTableView()
+                    
+                    
+                    switch (self.addingFreinds){
+                        
+                    case AddingFreinds.isComingForDriverOnly?:
+                        break
+                        
+                    default:
+                        self.callingPopularityService()
+                        break
+                    }
+                }
+                
+            })
+        }
+    }
+    
+    
+    func callingPopularityService(){
+        Route.getRoutesInfo(routeArray: self.contentArray!)
+        { (object, message, active, status) in
+            
+            if let object = object as? [String:Any] {
+                
+                let popularity = object["popularity"] as! [String:Any]
+                for (index, route) in (self.contentArray?.enumerated())! {
+                    let key  = "index_" + String(index)
+                    route.popularity = popularity[key] as! Int
+                }
+                self.setDataOnTableView()
+                
+            }
+            
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func registerCustomCell(){
+        
+        let cellNib = UINib(nibName: cellName, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: cellName)
+        tableView.tableFooterView = UIView()
+    }
+    
+    func setDataOnTableView(){
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        updateTableViewHeight()
+        tableView.reloadData()
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+
+    }
+    
+    func updateTableViewHeight(){
+        let count = ((contentArray?.count)! <= maxCellDisplay) ? (contentArray?.count) : (maxCellDisplay)
+        tableViewHeight.constant = CGFloat(cellHeight * count!)
+    }
+
+    @IBAction func onClickCreateTipNow(_ sender: UIButton) {
+        
+        if (self.contentArray?.count)! > 0 {
+            
+            let cont = ModalAlertBaseViewController.createAlertController(storyboardId: SelectPaymentModalController.nameOfClass())
+            cont.show(controller: self)
+            
+            cont.selectButtonTapped = { paymentType in
+                
+                self.paymentType = (paymentType as? String) ?? ""
+                
+                switch(self.addingFreinds){
+                    
+                case AddingFreinds.isComingForDriverOnly?:
+                    self.getLastInvitedTimeForDriver()
+                    
+                    break
+                    
+                default:
+                    self.getLastInvitedTime()
+                    break
+                }
+                
+            }
+            
+        }
+        else{
+            Utility.showAlertwithOkButton(message: ApplicationConstants.RouteNotFoundMessage, controller: self)
+        }
+    }
+    
+    
+    func getLastInvitedTimeForDriver(){
+        
+        FireBaseManager.sharedInstance.getLastUpdatedTimeForBothDriverPaseenger { (status, message, seat, returnSeats) in
+            
+            switch (status){
+                
+            case InvitedFriendTimeStatus.InviteNotExpireButDriverPending?:
+                self.serviceStatus = true
+                Utility.showAlertwithOkButton(message: message!, controller: self)
+                break
+                
+            case InvitedFriendTimeStatus.InviteNotExpireAndDriverAccepted?:
+                self.creatTripRequestForPassenger(shouldFtechMembers: true,driverID:message,seat:seat!)
+                break
+                
+            case InvitedFriendTimeStatus.InvitExpires?:
+                self.showAlertForEventExpire()
+                break
+                
+            case InvitedFriendTimeStatus.InviteNotExist?:
+                self.creatTripRequestForPassenger(shouldFtechMembers: false,driverID:nil,seat: 0)
+                break
+                
+            case InvitedFriendTimeStatus.InviteNotExpire?:
+                self.creatTripRequestForPassenger(shouldFtechMembers: true,driverID:nil,seat: 0)
+                break
+                
+            default:
+                break
+            }
+        }
+    }
+
+    func getLastInvitedTime(){
+        FireBaseManager.sharedInstance.getLastUpdatedTime { (objInvitedFriendTimeStatus) in
+            
+            switch objInvitedFriendTimeStatus{
+                
+            case InvitedFriendTimeStatus.InviteNotExist?:
+                self.creatTripRequest(shouldFtechMembers: false)
+                break
+                
+            case InvitedFriendTimeStatus.InvitExpires?:
+                self.showAlertForEventExpire()
+                break
+                
+            case InvitedFriendTimeStatus.InviteNotExpire?:
+                self.creatTripRequest(shouldFtechMembers: true)
+                break
+                
+            case InvitedFriendTimeStatus.InviteExistForDifferentType?:
+                self.creatTripRequest(shouldFtechMembers: false)
+                break
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    func creatTripRequest(shouldFtechMembers:Bool){
+        
+        PostTrip.createTrip(route: self.selectedRoute, shouldFetchMembers: shouldFtechMembers, paymentType: paymentType, completionHandler: { (response, message, active, status) in
+            
+            Utility.showCreateAnotherTripAlert(controller: self)
+            
+            if status! {
+                FireBaseManager.sharedInstance.deleteFreindInvites()
+            }
+            self.serviceStatus = status
+            if let message = message, let errorCode = message["error_code"] as? String {
+                self.errorCode = errorCode
+            }
+        })
+    }
+    
+    @objc func createAnotherTrip(){
+        self.creatTripRequest(shouldFtechMembers: false)
+    }
+
+    func creatTripRequestForPassenger(shouldFtechMembers:Bool,driverID:String?,seat:Int){
+        
+        PostTrip.createTripByPassenger(route: self.selectedRoute, shouldFetchMembers: shouldFtechMembers, driverID: driverID,seat:seat) { (object, message, active, status) in
+            if status! {
+                FireBaseManager.sharedInstance.deleteFreindInvites()
+            }
+            self.serviceStatus = status
+            if let message = message, let errorCode = message["error_code"] as? String {
+                self.errorCode = errorCode
+            }
+            Utility.showAlertwithOkButton(message: message!["message"] as! String, controller: self)
+        }
+    }
+
+    //MARK: - Alert Controller
+    func showAlertForEventExpire(){
+        
+        let alert = UIAlertController(title: ApplicationConstants.InviteExpireMessageTitleOnCreateTripeScreen, message: ApplicationConstants.InviteExpireMessageOnCreateTripeScreen, preferredStyle: UIAlertController.Style.alert)
+        
+        let cancelAction = UIAlertAction(title: "NO", style: .default, handler:{ action -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+        alert.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { action -> Void in
+            
+            switch (self.addingFreinds){
+                
+            case AddingFreinds.isComingForDriverOnly?:
+                self.deleteDriverWithFreindsAndCreateTrip()
+                break
+                
+            default:
+                self.deleteFreindsAndCreateTrip()
+                break
+            }
+        })
+        
+        
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
+    }
+    
+    
+    func deleteFreindsAndCreateTrip(){
+        
+        self.creatTripRequest(shouldFtechMembers: false)
+        FireBaseManager.sharedInstance.deleteCollection(completionHandler: { (status) in
+        })
+    }
+    
+    func deleteDriverWithFreindsAndCreateTrip(){
+        
+        self.creatTripRequestForPassenger(shouldFtechMembers: false,driverID:nil, seat: 0)
+        FireBaseManager.sharedInstance.deleteDriverPassengerData { (status) in
+        }
+    }
+    
+    @objc override func alertOkButtonHandler(){
+        
+        
+
+        if serviceStatus{
+            pushController(controllerIdentifier: MyTripsViewController.nameOfClass(), navigationTitle: "MY TRIPS", conditons: 1)
+//            if let vc = self.navigationController?.viewControllers.first {
+//                self.navigationController?.popToViewController(vc, animated: true)
+//            }
+//            else {
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//            self.navigationController?.popViewController(animated: true)
+        }
+        else if errorCode == ErrorTypes.AddBankAccount {
+            errorCode = ""
+            self.pushViewController(controllerIdentifier: AddBankDetailViewController.nameOfClass(), navigationTitle: "ADD BANK INFO", conditons: true)
+        }
+        
+        
+    }
+
+
+    
+}
+extension RouteSelectionViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contentArray!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellName , for: indexPath) as! RouteSelectionCell
+        let route = contentArray![indexPath.row]
+        cell.setDetails(route: route,freindType:addingFreinds!)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cellHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.tableView(tableView, heightForRowAt: indexPath)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.drawRouteOnMapWithObject(route: self.contentArray![indexPath.row])
+
+    }
+
+
+}

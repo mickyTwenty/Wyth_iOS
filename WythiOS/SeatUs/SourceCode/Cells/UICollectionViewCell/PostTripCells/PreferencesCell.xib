@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PreferencesCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-oQ-RJa">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets Allowed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYc-LQ-WSN">
+                                <rect key="frame" x="5" y="5" width="170" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4M-Jx-QYj" userLabel="SEPERATOR">
+                                <rect key="frame" x="90" y="25.5" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="B4H-Xm-hPN"/>
+                                    <constraint firstAttribute="width" id="ZWB-eE-0US"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-rG-8VZ" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="5" y="25.5" width="85" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1c5-IM-8HV" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="90" y="25.5" width="85" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3B-gL-tyT" userLabel="ViewVerticalSeperator">
+                                <rect key="frame" x="174" y="10" width="1" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="apu-zo-bmu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BYc-LQ-WSN" firstAttribute="trailing" secondItem="1c5-IM-8HV" secondAttribute="trailing" id="0N4-3s-WQS"/>
+                            <constraint firstAttribute="trailing" secondItem="a3B-gL-tyT" secondAttribute="trailing" constant="5" id="2Cx-s8-9OE"/>
+                            <constraint firstItem="a4M-Jx-QYj" firstAttribute="top" secondItem="BYc-LQ-WSN" secondAttribute="bottom" id="5MV-5r-BFL"/>
+                            <constraint firstAttribute="trailing" secondItem="1c5-IM-8HV" secondAttribute="trailing" constant="5" id="Ate-tj-djt"/>
+                            <constraint firstItem="Y8W-rG-8VZ" firstAttribute="leading" secondItem="A9a-oQ-RJa" secondAttribute="leading" constant="5" id="PBv-Av-hL5"/>
+                            <constraint firstItem="1c5-IM-8HV" firstAttribute="leading" secondItem="a4M-Jx-QYj" secondAttribute="trailing" id="U5Y-1c-uGN"/>
+                            <constraint firstItem="BYc-LQ-WSN" firstAttribute="leading" secondItem="Y8W-rG-8VZ" secondAttribute="leading" id="VLX-gS-y0z"/>
+                            <constraint firstAttribute="bottom" secondItem="a3B-gL-tyT" secondAttribute="bottom" constant="10" id="VM3-5j-TII"/>
+                            <constraint firstItem="1c5-IM-8HV" firstAttribute="top" secondItem="BYc-LQ-WSN" secondAttribute="bottom" id="hAU-Ep-LeS"/>
+                            <constraint firstItem="a4M-Jx-QYj" firstAttribute="centerX" secondItem="BYc-LQ-WSN" secondAttribute="centerX" id="hx9-gV-ppA"/>
+                            <constraint firstItem="Y8W-rG-8VZ" firstAttribute="top" secondItem="a4M-Jx-QYj" secondAttribute="bottom" id="iB1-x6-2To"/>
+                            <constraint firstItem="a3B-gL-tyT" firstAttribute="top" secondItem="A9a-oQ-RJa" secondAttribute="top" constant="10" id="oH9-q6-Y0P"/>
+                            <constraint firstItem="BYc-LQ-WSN" firstAttribute="top" secondItem="A9a-oQ-RJa" secondAttribute="top" constant="5" id="x7g-nB-57u"/>
+                            <constraint firstItem="a4M-Jx-QYj" firstAttribute="leading" secondItem="Y8W-rG-8VZ" secondAttribute="trailing" id="yav-65-fcV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="A9a-oQ-RJa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IdZ-Cg-hKe"/>
+                <constraint firstAttribute="bottom" secondItem="A9a-oQ-RJa" secondAttribute="bottom" id="TC9-Fl-BxN"/>
+                <constraint firstAttribute="trailing" secondItem="A9a-oQ-RJa" secondAttribute="trailing" id="Y8G-qe-9EK"/>
+                <constraint firstItem="A9a-oQ-RJa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZCA-by-Xph"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="164" height="50"/>
+            <connections>
+                <outlet property="checkmarkButtonLeft" destination="Y8W-rG-8VZ" id="fpP-Yr-YWi"/>
+                <outlet property="checkmarkButtonRight" destination="1c5-IM-8HV" id="vAo-t5-Xmu"/>
+                <outlet property="prefrenceTitleLbl" destination="BYc-LQ-WSN" id="yLK-2R-mWv"/>
+            </connections>
+            <point key="canvasLocation" x="-19" y="56"/>
+        </collectionViewCell>
+    </objects>
+</document>

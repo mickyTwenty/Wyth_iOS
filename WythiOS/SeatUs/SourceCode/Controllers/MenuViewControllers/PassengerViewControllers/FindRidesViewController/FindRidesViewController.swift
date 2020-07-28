@@ -1,0 +1,768 @@
+//
+//  FindRidesViewController.swift
+//  SeatUs
+//
+//  Created by Syed Muhammad Muzzammil on 15/11/2017.
+//  Copyright © 2017 Qazi Naveed. All rights reserved.
+//
+
+import UIKit
+import FZAccordionTableView
+import GooglePlaces
+import GoogleMaps
+import GooglePlacePicker
+
+class FindRidesViewController: BaseViewController {
+
+    @IBOutlet weak var tableView: FZAccordionTableView!
+    var contentArray : [PostTrip]!
+    var placesClient: GMSPlacesClient!
+    var slectedIndex : Int = -1
+    var tripArray : [GroupSearchTrip]! = []
+    var viewHeader : FindRidesHeaderCell?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.syncContacts()
+        registerCustomCell()
+        loadTableViewData()
+    }
+    
+    func registerCustomCell(){
+        tableView.register(UINib(nibName: FindRidesHeaderCell.nameOfClass(), bundle: nil), forHeaderFooterViewReuseIdentifier: FindRidesHeaderCell.nameOfClass())
+        
+        for cell in [TextFieldCell.nameOfClass(), LabelCell.nameOfClass(), DateButtonCell.nameOfClass(), AlertActionSheetCell.nameOfClass(), MultipleCheckboxCell.nameOfClass(), HorizontalScrollCell.nameOfClass(), CheckboxCell.nameOfClass(), ActionButtonCell.nameOfClass(),FindRidesCell.nameOfClass(),SingleActionButtonCell.nameOfClass(), MultiLabelCell.nameOfClass()]
+        {
+            let cellNib = UINib(nibName: cell, bundle: nil)
+            tableView.register(cellNib, forCellReuseIdentifier: cell)
+        }
+    }
+    
+    func showRideDetailsScreen(trip:SearchTrip){
+        
+        let controller = storyboard?.instantiateViewController(withIdentifier: RideDetailsViewController.nameOfClass()) as! RideDetailsViewController
+        controller.tripID = String(describing: trip.trip_id!)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func loadTableViewData(){
+        
+        tableView.initialOpenSections = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        tableView.separatorColor = UIColor.clear
+        tableView.allowMultipleSectionsOpen = true
+        
+        if Utility.isDriver() {
+            contentArray = PostTrip.getPostTripData(name: FileNames.SearchRidePlist)
+        }
+        else {
+            contentArray = PostTrip.getPostTripData(name: FileNames.FindRidePlist)
+        }
+
+        let trip = DataPersister.sharedInstance.getTripInfo()
+        
+        if (trip != nil) {
+            
+//            let objectTripName = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripName, array: contentArray)
+//            if trip?.trip_name != nil{
+//                objectTripName.placeholdertext = (trip?.trip_name)
+//            }
+            
+            let objectGender = Utility.getPostTripModel(key: PlistPlaceHolderConstant.genderPlaceHolder, array: contentArray)
+            if trip?.gender != nil{
+                objectGender.placeholdertext = (trip?.gender)
+            }
+
+            let object = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripOrigin, array: contentArray)
+            
+            if trip?.origin != nil{
+                object.placeholdertext = (trip?.origin)
+                object.address = trip?.originCoordinates
+            }
+            
+            
+            let objectDest = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripDestination, array: contentArray)
+            
+            if trip?.destination != nil{
+                objectDest.placeholdertext = trip?.destination
+                objectDest.address = trip?.destinationCoordinates
+            }
+            
+            
+            let objectEstimates = Utility.getPostTripModel(key: PlistPlaceHolderConstant.FindRidesEstimates, array: contentArray)
+            
+            if trip?.estimate != nil{
+                objectEstimates.placeholdertext = trip?.estimate
+            }
+            
+            let objectDate = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripDate, array: contentArray)
+            
+            if trip?.date != nil{
+                objectDate.placeholdertext = trip?.date
+            }
+            
+            let objectBooknow = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripBookNow, array: contentArray)
+            objectBooknow.isselected = NSNumber(booleanLiteral: (trip?.bookNow)!)
+            
+            var objectTimeOfDay = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripTimeOfDay, array: contentArray)
+            
+            var refrenceValueString = ""
+            if trip?.timeOfDay != nil{
+                refrenceValueString = (trip?.timeOfDay)!
+            }
+            
+            let objectSeats = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripSeats, array: contentArray)
+            if trip?.seats != nil{
+                objectSeats.placeholdertext = (trip?.seats)!
+            }
+            
+            let objectRoundTrip = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripRoundTrip, array: contentArray)
+            objectRoundTrip.isselected = NSNumber(booleanLiteral: (trip?.roundTrip)!)
+            
+            let objectRating = Utility.getPostTripModel(key: PlistPlaceHolderConstant.FindRidesRating, array: contentArray)
+            if trip?.rating != nil{
+                var rating = (trip?.rating)!
+                if 1...4 ~= Int(rating)! {
+                    rating += "+"
+                }
+                objectRating.placeholdertext = rating
+            }
+            
+            objectTimeOfDay =  Utility.setTimeOfDay(trip: objectTimeOfDay, thresholdDay: refrenceValueString) 
+            
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func removeTripSearchData(){
+        
+        if (tripArray.count > 0){
+            tripArray.removeAll()
+            tableView.reloadData()
+//            tableView.reloadSections(IndexSet(integer: 1), with: UITableViewRowAnimation.none)
+        }
+    }
+    
+    @objc func dropDownButtonPressed(sender:UIButton!) {
+        
+        let index = sender.tag
+        slectedIndex = index
+        let postTrip: PostTrip = contentArray[index]
+        
+        let shouldCallCustomFunction = Bool(truncating: postTrip.hascustomaction as NSNumber)
+        if shouldCallCustomFunction{
+            
+            let cell = tableView.cellForRow(at: NSIndexPath(item: index, section: 0) as IndexPath)
+            
+            switch postTrip.customactionname{
+                
+                
+            case DropDownOptions.WriteTripName.rawValue:
+                let labelCell = cell as! LabelCell
+                witeTripNamePopup(label: labelCell.contentLabel)
+                break;
+                
+            case DropDownOptions.SelectOrigin.rawValue:
+                let labelCell = cell as! LabelCell
+                showPlacePicker(locationAddressLable: labelCell.contentLabel)
+                break;
+                
+            case DropDownOptions.SelectDestination.rawValue:
+                let labelCell = cell as! LabelCell
+                showPlacePicker(locationAddressLable: labelCell.contentLabel)
+                
+                self.syncWithPlist(index: index, value: labelCell.contentLabel.text!)
+                break;
+                
+            case DropDownOptions.SelectDestination.rawValue:
+                let labelCell = cell as! LabelCell
+                self.syncWithPlist(index: index, value: labelCell.contentLabel.text!)
+                break;
+                
+            case DropDownOptions.SelectDate.rawValue:
+                let dateCell = cell as! DateButtonCell
+                selectDOB(label: dateCell.dateLabel, index: index)
+                break;
+                
+            case DropDownOptions.SelectGender.rawValue:
+                let alertActionSheetCell = cell as! AlertActionSheetCell
+                selectDropDown(label: alertActionSheetCell.contentLabel, index: index, array: Utility.getGenderArrayForRidePrephences(), title: postTrip.title)
+                break;
+                
+            case DropDownOptions.SelectRating.rawValue:
+                let alertActionSheetCell = cell as! AlertActionSheetCell
+                selectDropDown(label: alertActionSheetCell.contentLabel, index: index, array: Utility.getRatings(), title: postTrip.title)
+                break;
+                
+            default: break
+            }
+        }
+    }
+    
+    @objc func selectDOB(label: UILabel, index: Int){
+        
+        view.endEditing(true)
+        
+        let controller = CustomDatePickerController.createDatePickerController(storyboardId: CustomDatePickerController.nameOfClass())
+        controller.format = ApplicationConstants.DateFormatClient
+        controller.show(controller: self)
+        controller.doneButtonTapped = { selectedData in
+            
+            if (Utility.isDateValid(date: selectedData)){
+                label.text = selectedData
+                self.syncWithPlist(index: index, value: selectedData)
+            }
+            else{
+                Utility.showAlertwithOkButton(message: ApplicationConstants.PastDateMessage, controller: self)
+            }
+        }
+    }
+    
+    func syncWithPlist(index:Int , value:String){
+        
+        let postTrip: PostTrip = contentArray[index]
+        postTrip.placeholdertext = value
+        _ = (DataPersister.sharedInstance.saveTrip(trip: postTrip))
+        removeTripSearchData()
+    }
+    
+    func isEmpty(titleKey: String, placeHolderText: String) -> Bool{
+        let object = Utility.getPostTripModel(key: titleKey, array: contentArray)
+        return (object.placeholdertext == placeHolderText)
+    }
+    
+    func isVerifiedFields() -> String {
+        var emptyFields = [String]()
+        
+        if isEmpty(titleKey: PlistPlaceHolderConstant.PostTripOrigin, placeHolderText: PlistPlaceHolderConstant.PlaceHolderForMap) {
+            emptyFields.append(PlistPlaceHolderConstant.PostTripOrigin)
+        }
+        
+        if isEmpty(titleKey: PlistPlaceHolderConstant.PostTripDestination, placeHolderText: PlistPlaceHolderConstant.PlaceHolderForMap) {
+            emptyFields.append(PlistPlaceHolderConstant.PostTripDestination)
+        }
+        
+        if isEmpty(titleKey: PlistPlaceHolderConstant.PostTripDate, placeHolderText: PlistPlaceHolderConstant.PlaceHolderDate) {
+            emptyFields.append(PlistPlaceHolderConstant.PostTripDate)
+        }
+        
+        let checkboxStates = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripTimeOfDay, array: contentArray)
+        
+        let selectedCheckboxes = CheckboxState.getCheckboxState(checkboxStates.checkboxes).filter { ($0.isselected == 1) }.count
+        
+        if selectedCheckboxes <= 0 {
+            emptyFields.append(checkboxStates.title)
+        }
+        
+        var message = ""
+        
+        if emptyFields.count > 0 {
+            message = WarningMessage.PleaseSelectText
+            message += emptyFields.joined(separator: ", ")
+            message += WarningMessage.BeforeProceedingText
+        }
+        
+        return message
+    }
+    
+    func showPlacePicker(locationAddressLable:UILabel ){
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        present(placePicker, animated: true, completion: nil)
+    }
+    
+    func witeTripNamePopup(label:UILabel){
+        print("witeTripNamePopup")
+    }
+    
+    func setDataOnTableView(){
+        self.tableView.reloadData()
+        self.calculateDistance()
+    }
+    
+    func calculateDistance(){
+        
+        let tripOriginObject = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripOrigin, array: contentArray)
+        let destinationOriginObject = Utility.getPostTripModel(key: PlistPlaceHolderConstant.PostTripDestination, array: contentArray)
+        
+        if (!(tripOriginObject.address.isEmpty) && !(destinationOriginObject.address.isEmpty))
+        {
+            
+            PostTrip.calculateRoutePriceEstimation(fromOrigin: tripOriginObject.address, toDestination: destinationOriginObject.address, completionHandler: { (object, message, active, status, error) in
+                if status!{
+                    
+                    let estimateObject = Utility.getPostTripModel(key: PlistPlaceHolderConstant.FindRidesEstimates, array: self.contentArray)
+                    estimateObject.placeholdertext = object
+                    _ = DataPersister.sharedInstance.saveTrip(trip: estimateObject)
+                    self.removeTripSearchData()
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func searchTripRequest(shouldFtechMembers:Bool){
+        
+        PostTrip.searchTrip(route: Route(), shouldFetchMembers: shouldFtechMembers) { (response, message, active, status) in
+        
+            if let array = response as? [GroupSearchTrip] {
+            
+                if array.count > 0 {
+
+                    self.tripArray = response as! [GroupSearchTrip]
+                    self.tableView.reloadData()
+                    self.tableView.toggleSection(0)
+
+                }
+                else {
+                    Utility.showAlertwithOkButton(message: message?.value(forKey: "message") as! String, controller: self)
+                }
+                self.setCollapseImageState(isOpened: false)
+                
+            }
+            else {
+                Utility.showAlertwithOkButton(message: message?.value(forKey: "message") as! String, controller: self)
+            }
+        }
+        
+    }
+    
+    func getLastInvitedTime(){
+        FireBaseManager.sharedInstance.getLastUpdatedTime { (objInvitedFriendTimeStatus) in
+            
+            switch objInvitedFriendTimeStatus{
+                
+            case InvitedFriendTimeStatus.InviteNotExist?:
+                self.searchTripRequest(shouldFtechMembers: false)
+                break
+                
+            case InvitedFriendTimeStatus.InvitExpires?:
+                self.searchTripRequest(shouldFtechMembers: false)
+//                self.showAlertForEventExpire()
+                break
+                
+            case InvitedFriendTimeStatus.InviteNotExpire?:
+                self.searchTripRequest(shouldFtechMembers: true)
+                break
+                
+            case InvitedFriendTimeStatus.InviteExistForDifferentType?:
+                self.searchTripRequest(shouldFtechMembers: false)
+                
+                break
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    @objc func selectDropDown(label: UILabel, index: Int, array: [String], title: String){
+        view.endEditing(true)
+        let actionSheet = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        for (_, value) in array.enumerated() {
+            actionSheet.addAction(UIAlertAction.init(title: value, style: UIAlertAction.Style.default, handler: { (action) in
+                label.text = value
+                self.syncWithPlist(index: index, value: value)
+            }))
+        }
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { (action) in
+        }))
+        
+        //Present the controller
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func setCollapseImageState(isOpened: Bool){
+        if let header = viewHeader {
+            header.collapseImageView.isHighlighted = isOpened
+        }
+    }
+    
+    func searchTrip(){
+        
+//        tripArray = SearchTrip.search(byFilters: contentArray, onTrips: tripArray, filterKeys:)
+        tableView.reloadData()
+        
+    }
+    
+}
+
+extension FindRidesViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return contentArray.count
+        }else{
+            
+            print("Sections",section)
+            print("Rows", tripArray[section-1].trips.count)
+
+            return tripArray[section-1].trips.count
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("Total Sections", tripArray.count)
+        return tripArray.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            if contentArray.count > 0{
+                let object = contentArray[indexPath.row]
+                if indexPath.section == 0 && object.cellidentifier == HorizontalScrollCell.nameOfClass(){
+                    return CGFloat(130)
+                }
+                else{
+                    return UITableView.automaticDimension
+                }
+                
+            }
+            else{
+                return UITableView.automaticDimension
+            }
+        }
+        else{
+            return UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        
+        if section == 0 {
+            return FindRidesHeaderCell.kDefaultAccordionHeaderViewHeight
+        }
+
+       else if tripArray[section-1].group_id != nil {
+            return FindRidesHeaderCell.kDefaultAccordionHeaderViewHeight
+        }
+        else {
+            return 0
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
+      
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell = UITableViewCell()
+        
+        if indexPath.section == 0 {
+            
+            let object = contentArray[indexPath.row]
+            cell  = tableView.dequeueReusableCell(withIdentifier: object.cellidentifier, for: indexPath)
+            
+            cell.backgroundColor = UIColor.white
+            cell.tag = indexPath.row
+            
+            switch cell {
+                
+            case is LabelCell:
+                
+                let labelCell = cell as! LabelCell
+                labelCell.initializeCell(contentArray[indexPath.row])
+                labelCell.selectButton.tag = indexPath.row
+                labelCell.selectButton.addTarget(self, action: #selector(dropDownButtonPressed(sender:)), for: .touchUpInside)
+                break
+                
+            case is DateButtonCell:
+                
+                let dateCell = cell as! DateButtonCell
+                dateCell.initializeCell(contentArray[indexPath.row])
+                dateCell.selectButton.tag = indexPath.row
+                dateCell.selectButton.addTarget(self, action: #selector(dropDownButtonPressed(sender:)), for: .touchUpInside)
+                break
+                
+            case is MultipleCheckboxCell:
+                
+                let multipleCheckboxCell = cell as! MultipleCheckboxCell
+                multipleCheckboxCell.initializeCell(contentArray[indexPath.row])
+                multipleCheckboxCell.tag = indexPath.row
+                multipleCheckboxCell.delegate = self
+                break
+                
+            case is CheckboxCell:
+                
+                let checkboxCell = cell as! CheckboxCell
+                checkboxCell.initializeCell(contentArray[indexPath.row])
+                checkboxCell.tag = indexPath.row
+                checkboxCell.delegate = self
+                break
+
+            case is HorizontalScrollCell:
+                
+                let horizontalScrollCell = cell as! HorizontalScrollCell
+                horizontalScrollCell.initializeCell(contentArray[indexPath.row])
+                horizontalScrollCell.delegate = self
+                horizontalScrollCell.tag = indexPath.row
+                break
+
+            case is ActionButtonCell:
+                
+                let actionButtonCell = cell as! ActionButtonCell
+                actionButtonCell.initializeCell(contentArray[indexPath.row])
+                actionButtonCell.delegate = self
+                break
+                
+            case is AlertActionSheetCell:
+                
+                let alertActionSheetCell = cell as! AlertActionSheetCell
+                alertActionSheetCell.initializeCell(contentArray[indexPath.row])
+                alertActionSheetCell.selectButton.tag = indexPath.row
+                alertActionSheetCell.contentLabel.tag = indexPath.row
+                alertActionSheetCell.selectButton.addTarget(self, action: #selector(dropDownButtonPressed(sender:)), for: .touchUpInside)
+                break
+                
+            case is TextFieldCell:
+                
+                let textFieldCell = cell as! TextFieldCell
+                textFieldCell.initializeCell(contentArray[indexPath.row])
+                textFieldCell.delegate = self
+                break
+                
+                
+            case is SingleActionButtonCell:
+                
+                let singleActionButtonCell = cell as! SingleActionButtonCell
+                singleActionButtonCell.initializeCell(contentArray[indexPath.row])
+                singleActionButtonCell.delegate = self
+                break
+
+                
+            default: break
+                
+            }
+        }
+        
+        else {
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: FindRidesCell.nameOfClass(), for: indexPath)
+            let findRidesCell = cell  as! FindRidesCell
+            
+            if tripArray[indexPath.section-1].group_id != nil {
+                cell.backgroundColor = UIColor.groupTableViewBackground
+            }
+            else {
+                cell.backgroundColor = UIColor.white
+            }
+            
+            findRidesCell.initializeCell(tripArray[indexPath.section-1].trips[indexPath.row])
+            
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0 {
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: FindRidesHeaderCell.nameOfClass()) as! FindRidesHeaderCell
+            
+            if viewHeader == nil {
+                viewHeader = view
+                self.setCollapseImageState(isOpened: true)
+            }
+
+            return view
+        }
+        else{
+            let label = UILabel()
+            label.text = " Suggested Rides For Round Trip"
+            label.textColor = UIColor.white
+            label.backgroundColor = UIColor.black
+            return label
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section != 0 {
+            showRideDetailsScreen(trip: tripArray[indexPath.section-1].trips[indexPath.row])
+        }
+    }
+
+}
+
+extension FindRidesViewController : FZAccordionTableViewDelegate {
+    
+    func tableView(_ tableView: FZAccordionTableView, willOpenSection section: Int, withHeader header: UITableViewHeaderFooterView?) {
+        self.setCollapseImageState(isOpened: true)
+    }
+    
+    func tableView(_ tableView: FZAccordionTableView, didOpenSection section: Int, withHeader header: UITableViewHeaderFooterView?) {
+        
+    }
+    
+    func tableView(_ tableView: FZAccordionTableView, willCloseSection section: Int, withHeader header: UITableViewHeaderFooterView?) {
+    }
+    
+    func tableView(_ tableView: FZAccordionTableView, didCloseSection section: Int, withHeader header: UITableViewHeaderFooterView?) {
+        if header != nil {
+            self.setCollapseImageState(isOpened: false)
+        }
+    }
+    
+    func tableView(_ tableView: FZAccordionTableView, canInteractWithHeaderAtSection section: Int) -> Bool {
+        return true
+    }
+}
+
+extension FindRidesViewController: MultipleCheckboxCellDelegate {
+   
+    func rideTimeButtonClicked(){
+    }
+
+    func clickEvent(_ tag: Int, CheckboxStates checkboxStates: [CheckboxState]) {
+        let index = tag
+        let postTrip: PostTrip = contentArray[index]
+        postTrip.checkboxes.removeAll()
+        for checkboxState in checkboxStates{
+            let keys = Mirror(reflecting: checkboxState).children
+            var dict = [String:Any]()
+            for key in keys{
+                dict[key.label!] = key.value
+            }
+            postTrip.checkboxes.append(dict)
+        }
+         _ = DataPersister.sharedInstance.saveTrip(trip: postTrip)
+        removeTripSearchData()
+    }
+}
+
+extension FindRidesViewController: ActionButtonCellDelegate {
+    func leftButtonClicked(_ sender: Any) {
+        let alertMessage = isVerifiedFields()
+        if alertMessage.isEmpty {
+            
+            let trip_origin = DataPersister.getTripInfo(forKey: CoreDataConstants.TripInfoOrigin) as! String
+            let trip_destination = DataPersister.getTripInfo(forKey: CoreDataConstants.TripInfoDestination) as! String
+            
+            if trip_origin.compare(trip_destination) == .orderedSame {
+                Utility.showAlertwithOkButton(message: ApplicationConstants.SameAddressMessage, controller: self)
+                return
+            }
+
+            setInviteType()
+            getLastInvitedTime()
+        }else{
+            Utility.showAlertwithOkButton(message: alertMessage, controller: self)
+        }
+    }
+    
+    func rightButtonClicked(_ sender: Any) {
+                
+        let alertMessage = isVerifiedFields()
+        if alertMessage.isEmpty {
+            setInviteType()
+            let  controller = self.storyboard?.instantiateViewController(withIdentifier: AddFriendsViewController.nameOfClass()) as! AddFriendsViewController
+            navigationController?.pushViewController(controller, animated: true)
+        }else{
+            Utility.showAlertwithOkButton(message: alertMessage, controller: self)
+        }
+        
+    }
+    
+    func setInviteType(){
+    
+        switch Utility.getUserType(){
+            
+        case UserType.UserNormal:
+            Manager.sharedInstance.inviteType = InviteCategory.UserSearch
+            break
+            
+        case UserType.UserDriver:
+            Manager.sharedInstance.inviteType = InviteCategory.DriverSearch
+            break
+            
+        default:
+            break
+            
+        }
+
+    
+    }
+}
+
+
+extension FindRidesViewController: CheckboxCellDelegate {
+    func clickEvent(CheckboxIndex tag: Int, isSelected: Bool) {
+        let index = tag
+        let postTrip: PostTrip = contentArray[index]
+        postTrip.isselected = isSelected as NSNumber
+         _ = DataPersister.sharedInstance.saveTrip(trip: postTrip)
+        removeTripSearchData()
+    }
+}
+
+extension FindRidesViewController : GMSPlacePickerViewControllerDelegate {
+    
+    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+        let model = contentArray[slectedIndex]
+        if (place.formattedAddress != nil){
+            model.address = Utility.getCoordinateString(byCLLocationCoordinate2D: place.coordinate)
+            syncWithPlist(index: slectedIndex, value: place.formattedAddress!)
+        }
+            
+        else{
+            placesClient = GMSPlacesClient.shared()
+            placesClient.lookUpPlaceID(place.placeID ?? "", callback: { (objGMSPlace, error) in
+                if (objGMSPlace != nil){
+                    model.address = Utility.getCoordinateString(byCLLocationCoordinate2D: place.coordinate)
+                    
+                    self.syncWithPlist(index: self.slectedIndex, value: (objGMSPlace?.formattedAddress)!)
+                    self.setDataOnTableView()
+                }
+            })
+        }
+        setDataOnTableView()
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+        print("No place selected")
+    }
+}
+
+extension FindRidesViewController: HorizontalScrollCellDelegate {
+    func clickEvent(_ tag: Int, itemTag: Int, selectedStates: [Int : Bool]) {
+        Utility.updatePreference(itemTag: itemTag, selectedStates: selectedStates)
+    }
+}
+
+extension FindRidesViewController: TextFieldCellDelegate {
+    func textChanged(TextFieldCell tag: Int, _ text: String) {
+        let postTrip: PostTrip = contentArray[tag]
+        postTrip.placeholdertext = text
+    }
+}
+
+extension FindRidesViewController:SingleActionButtonCellDelegate{
+    func onClickButton(_ sender: Any, tag: Int) {
+        let alertMessage = isVerifiedFields()
+        if alertMessage.isEmpty {
+            
+            let trip_origin = DataPersister.getTripInfo(forKey: CoreDataConstants.TripInfoOrigin) as! String
+            let trip_destination = DataPersister.getTripInfo(forKey: CoreDataConstants.TripInfoDestination) as! String
+            
+            if trip_origin.compare(trip_destination) == .orderedSame {
+                Utility.showAlertwithOkButton(message: ApplicationConstants.SameAddressMessage, controller: self)
+                return
+            }
+            self.searchTripRequest(shouldFtechMembers: false)
+        }else{
+            Utility.showAlertwithOkButton(message: alertMessage, controller: self)
+        }
+    }
+}

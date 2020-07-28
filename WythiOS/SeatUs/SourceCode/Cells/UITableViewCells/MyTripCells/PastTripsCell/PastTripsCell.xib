@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="KGk-i7-Jjw" customClass="PastTripsCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="363" height="108.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-id-fub">
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="108.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p12-Y9-QPJ" customClass="ProfileImageView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PBj-Dm-38h"/>
+                                    <constraint firstAttribute="width" constant="70" id="YuH-fM-rvN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-WU-VHE">
+                                <rect key="frame" x="90" y="15" width="79" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="asds asdsadsadhkljajdksad sakfdhfh fdh hqdew" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEc-qh-bkm">
+                                <rect key="frame" x="171" y="15" width="187" height="27"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVp-5U-7Q1">
+                                <rect key="frame" x="90" y="47" width="43.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="asds asdsadsadhkljajdksad sakfdhfh fdh " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttt-Dh-lLw">
+                                <rect key="frame" x="135.5" y="47" width="222.5" height="13.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7B-7S-ndL">
+                                <rect key="frame" x="90" y="70.5" width="83" height="28"/>
+                                <state key="normal" image="view_detail"/>
+                                <connections>
+                                    <action selector="onClickViewDetail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DaT-CA-LWk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="P7B-7S-ndL" secondAttribute="bottom" constant="10" id="4px-oc-Or9"/>
+                            <constraint firstItem="IEc-qh-bkm" firstAttribute="leading" secondItem="pAw-WU-VHE" secondAttribute="trailing" constant="2" id="7Jr-mC-7bp"/>
+                            <constraint firstItem="p12-Y9-QPJ" firstAttribute="leading" secondItem="4Oa-id-fub" secondAttribute="leading" constant="10" id="8KN-XB-fBW"/>
+                            <constraint firstItem="Ttt-Dh-lLw" firstAttribute="top" secondItem="nVp-5U-7Q1" secondAttribute="top" id="Cdn-7V-BRp"/>
+                            <constraint firstItem="p12-Y9-QPJ" firstAttribute="top" secondItem="4Oa-id-fub" secondAttribute="top" constant="10" id="Dh6-BF-HsB"/>
+                            <constraint firstAttribute="trailing" secondItem="IEc-qh-bkm" secondAttribute="trailing" constant="5" id="DnI-aB-w0b"/>
+                            <constraint firstItem="pAw-WU-VHE" firstAttribute="leading" secondItem="p12-Y9-QPJ" secondAttribute="trailing" constant="10" id="Dwo-2U-Wso"/>
+                            <constraint firstAttribute="trailing" secondItem="Ttt-Dh-lLw" secondAttribute="trailing" constant="5" id="HHJ-Wh-igw"/>
+                            <constraint firstItem="nVp-5U-7Q1" firstAttribute="top" secondItem="IEc-qh-bkm" secondAttribute="bottom" constant="5" id="IXD-8D-7tX"/>
+                            <constraint firstItem="IEc-qh-bkm" firstAttribute="top" secondItem="pAw-WU-VHE" secondAttribute="top" id="bZa-Kd-sMt"/>
+                            <constraint firstItem="nVp-5U-7Q1" firstAttribute="leading" secondItem="pAw-WU-VHE" secondAttribute="leading" id="f2c-4o-3y8"/>
+                            <constraint firstItem="P7B-7S-ndL" firstAttribute="leading" secondItem="nVp-5U-7Q1" secondAttribute="leading" id="lVc-fB-7xQ"/>
+                            <constraint firstItem="pAw-WU-VHE" firstAttribute="top" secondItem="p12-Y9-QPJ" secondAttribute="top" constant="5" id="qx5-iw-Tm4"/>
+                            <constraint firstItem="P7B-7S-ndL" firstAttribute="top" secondItem="Ttt-Dh-lLw" secondAttribute="bottom" constant="10" id="xfu-uZ-liX"/>
+                            <constraint firstItem="Ttt-Dh-lLw" firstAttribute="leading" secondItem="nVp-5U-7Q1" secondAttribute="trailing" constant="2" id="yEC-GB-iTF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4Oa-id-fub" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7Mh-BR-GmA"/>
+                    <constraint firstItem="4Oa-id-fub" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LZE-Tp-0nq"/>
+                    <constraint firstAttribute="trailing" secondItem="4Oa-id-fub" secondAttribute="trailing" id="MWa-tH-1cH"/>
+                    <constraint firstAttribute="bottom" secondItem="4Oa-id-fub" secondAttribute="bottom" id="SQa-o3-mPn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="headingLabel" destination="pAw-WU-VHE" id="VVd-5l-4WI"/>
+                <outlet property="nameLabel" destination="IEc-qh-bkm" id="5Ql-z9-tql"/>
+                <outlet property="profileImageView" destination="p12-Y9-QPJ" id="G4a-QX-xbt"/>
+                <outlet property="tripLabel" destination="Ttt-Dh-lLw" id="xWR-Tz-0SP"/>
+            </connections>
+            <point key="canvasLocation" x="47.5" y="84.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="view_detail" width="83" height="22"/>
+    </resources>
+</document>

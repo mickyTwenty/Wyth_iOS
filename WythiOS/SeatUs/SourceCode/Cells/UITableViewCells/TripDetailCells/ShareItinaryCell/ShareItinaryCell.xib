@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ShareItinaryCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72r-qP-7wX">
+                        <rect key="frame" x="22" y="3" width="276" height="36"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-5s-WU9" userLabel="ShareItinary">
+                                <rect key="frame" x="143" y="3" width="133" height="31"/>
+                                <state key="normal" image="share_btn_trip"/>
+                                <connections>
+                                    <action selector="onClickShare:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UvZ-MH-fHF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOz-NN-pqw" userLabel="CancelOrLeaveTrip">
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="36"/>
+                                <state key="normal" image="cancel_ride"/>
+                                <connections>
+                                    <action selector="onClickCancelOrLeaveTrip:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xfl-4F-BBt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bbk-5s-WU9" firstAttribute="leading" secondItem="OOz-NN-pqw" secondAttribute="trailing" constant="10" id="9EJ-Bq-yWR"/>
+                            <constraint firstItem="OOz-NN-pqw" firstAttribute="top" secondItem="72r-qP-7wX" secondAttribute="top" id="KIj-yT-Q9H"/>
+                            <constraint firstAttribute="bottom" secondItem="OOz-NN-pqw" secondAttribute="bottom" id="MlV-NU-O6m"/>
+                            <constraint firstItem="OOz-NN-pqw" firstAttribute="leading" secondItem="72r-qP-7wX" secondAttribute="leading" id="QQp-y6-6hr"/>
+                            <constraint firstItem="bbk-5s-WU9" firstAttribute="centerY" secondItem="OOz-NN-pqw" secondAttribute="centerY" id="beN-21-lTm"/>
+                            <constraint firstAttribute="trailing" secondItem="bbk-5s-WU9" secondAttribute="trailing" id="zwI-C1-xHa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="72r-qP-7wX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="7Ze-Xm-dGX"/>
+                    <constraint firstAttribute="bottom" secondItem="72r-qP-7wX" secondAttribute="bottom" constant="4.5" id="LtV-pp-0X7"/>
+                    <constraint firstItem="72r-qP-7wX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MPF-QY-juo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cancelLeaveButton" destination="OOz-NN-pqw" id="R97-ep-ogM"/>
+            </connections>
+            <point key="canvasLocation" x="-75" y="159"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cancel_ride" width="133" height="31"/>
+        <image name="share_btn_trip" width="133" height="31"/>
+    </resources>
+</document>

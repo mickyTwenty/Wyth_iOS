@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LeftCheckBox" id="1c0-Wc-u67" userLabel="LeftCheckBox">
+            <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-LV-eMp">
+                    <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+                    <subviews>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CheckBox" image="inactive_checkbox_posttrip" highlightedImage="active_checkbox_posttrip" translatesAutoresizingMaskIntoConstraints="NO" id="3db-aE-sOH">
+                            <rect key="frame" x="3" y="21" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3db-aE-sOH" secondAttribute="height" multiplier="1:1" id="qir-2j-Ddc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Label" text="Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ef-a1-x7Y">
+                            <rect key="frame" x="27" y="0.0" width="84" height="55"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-MT-Mc2">
+                            <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+                            <size key="titleShadowOffset" width="0.0" height="-1"/>
+                            <connections>
+                                <action selector="clickEvent:" destination="-1" eventType="touchUpInside" id="Fq2-6y-Oqy"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="IGn-MT-Mc2" firstAttribute="top" secondItem="5DW-LV-eMp" secondAttribute="top" id="6eF-EQ-9mA"/>
+                        <constraint firstItem="0Ef-a1-x7Y" firstAttribute="top" secondItem="5DW-LV-eMp" secondAttribute="top" id="76P-od-nUv"/>
+                        <constraint firstItem="IGn-MT-Mc2" firstAttribute="leading" secondItem="5DW-LV-eMp" secondAttribute="leading" id="8nY-Oy-jbd"/>
+                        <constraint firstItem="3db-aE-sOH" firstAttribute="leading" secondItem="5DW-LV-eMp" secondAttribute="leading" constant="3" id="Ohj-xc-Wn1"/>
+                        <constraint firstAttribute="bottom" secondItem="IGn-MT-Mc2" secondAttribute="bottom" id="RFp-0g-NJj"/>
+                        <constraint firstAttribute="trailing" secondItem="0Ef-a1-x7Y" secondAttribute="trailing" constant="3" id="Trt-Gd-0BQ"/>
+                        <constraint firstAttribute="trailing" secondItem="IGn-MT-Mc2" secondAttribute="trailing" id="ZBJ-T1-5c2"/>
+                        <constraint firstItem="3db-aE-sOH" firstAttribute="centerY" secondItem="0Ef-a1-x7Y" secondAttribute="centerY" id="dqq-OF-KdR"/>
+                        <constraint firstItem="0Ef-a1-x7Y" firstAttribute="leading" secondItem="3db-aE-sOH" secondAttribute="trailing" constant="10" id="wRO-zx-mjd"/>
+                        <constraint firstAttribute="bottom" secondItem="0Ef-a1-x7Y" secondAttribute="bottom" id="wjC-NG-zLJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="5sI-ea-GvM" firstAttribute="bottom" secondItem="5DW-LV-eMp" secondAttribute="bottom" id="5g9-YL-zTI"/>
+                <constraint firstItem="5DW-LV-eMp" firstAttribute="leading" secondItem="5sI-ea-GvM" secondAttribute="leading" id="GkW-4a-83N"/>
+                <constraint firstItem="5sI-ea-GvM" firstAttribute="trailing" secondItem="5DW-LV-eMp" secondAttribute="trailing" id="RkX-9W-dar"/>
+                <constraint firstItem="5DW-LV-eMp" firstAttribute="top" secondItem="5sI-ea-GvM" secondAttribute="top" id="gB1-Ri-EYq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="5sI-ea-GvM"/>
+            <point key="canvasLocation" x="-445" y="22.5"/>
+        </view>
+        <view contentMode="scaleToFill" restorationIdentifier="RightCheckbox" id="TFC-dL-dCe" userLabel="RightCheckbox">
+            <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqm-g8-bIU">
+                    <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+                    <subviews>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CheckBox" image="inactive_checkbox_posttrip" highlightedImage="active_checkbox_posttrip" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-jv-BWa">
+                            <rect key="frame" x="97" y="21" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="NSS-jv-BWa" secondAttribute="height" multiplier="1:1" id="Kg8-Z1-znv"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Label" text="Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBX-hS-ROQ">
+                            <rect key="frame" x="3" y="0.0" width="84" height="55"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-jK-fBb">
+                            <rect key="frame" x="0.0" y="0.0" width="114" height="55"/>
+                            <size key="titleShadowOffset" width="0.0" height="-1"/>
+                            <connections>
+                                <action selector="clickEvent:" destination="-1" eventType="touchUpInside" id="g0F-qy-PHv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="HBX-hS-ROQ" firstAttribute="top" secondItem="jqm-g8-bIU" secondAttribute="top" id="9I5-XC-EQf"/>
+                        <constraint firstAttribute="bottom" secondItem="nMb-jK-fBb" secondAttribute="bottom" id="Ad7-Ca-4JW"/>
+                        <constraint firstAttribute="bottom" secondItem="HBX-hS-ROQ" secondAttribute="bottom" id="K3o-kX-FEX"/>
+                        <constraint firstAttribute="trailing" secondItem="nMb-jK-fBb" secondAttribute="trailing" id="M6d-Py-v8R"/>
+                        <constraint firstItem="NSS-jv-BWa" firstAttribute="centerY" secondItem="HBX-hS-ROQ" secondAttribute="centerY" id="QkN-mp-84a"/>
+                        <constraint firstAttribute="trailing" secondItem="NSS-jv-BWa" secondAttribute="trailing" constant="3" id="UyJ-BQ-cYg"/>
+                        <constraint firstItem="HBX-hS-ROQ" firstAttribute="leading" secondItem="jqm-g8-bIU" secondAttribute="leading" constant="3" id="dp5-he-i0j"/>
+                        <constraint firstItem="NSS-jv-BWa" firstAttribute="leading" secondItem="HBX-hS-ROQ" secondAttribute="trailing" constant="10" id="eOj-Yc-HWd"/>
+                        <constraint firstItem="nMb-jK-fBb" firstAttribute="leading" secondItem="jqm-g8-bIU" secondAttribute="leading" id="pH9-UB-nvr"/>
+                        <constraint firstItem="nMb-jK-fBb" firstAttribute="top" secondItem="jqm-g8-bIU" secondAttribute="top" id="r9B-pY-pW7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="NJd-iO-uYk" firstAttribute="bottom" secondItem="jqm-g8-bIU" secondAttribute="bottom" id="G9m-eL-NcO"/>
+                <constraint firstItem="NJd-iO-uYk" firstAttribute="trailing" secondItem="jqm-g8-bIU" secondAttribute="trailing" id="QH9-i7-B0j"/>
+                <constraint firstItem="jqm-g8-bIU" firstAttribute="top" secondItem="NJd-iO-uYk" secondAttribute="top" id="RJM-xZ-DOF"/>
+                <constraint firstItem="jqm-g8-bIU" firstAttribute="leading" secondItem="NJd-iO-uYk" secondAttribute="leading" id="Wrb-s6-Cyv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="NJd-iO-uYk"/>
+            <point key="canvasLocation" x="-445" y="22.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="active_checkbox_posttrip" width="14" height="14"/>
+        <image name="inactive_checkbox_posttrip" width="14" height="14"/>
+    </resources>
+</document>

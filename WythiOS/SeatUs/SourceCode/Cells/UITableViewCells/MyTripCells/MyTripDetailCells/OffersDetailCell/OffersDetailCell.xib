@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OffersDetailCell" rowHeight="119" id="KGk-i7-Jjw" customClass="OffersDetailCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="118.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh1-ud-P3K">
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="118.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-4Q-xu5" customClass="ProfileImageView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="70.5" height="70.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1sd-fA-XzP"/>
+                                    <constraint firstAttribute="width" constant="70" id="YXc-c6-fsZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZH-LE-EFv">
+                                <rect key="frame" x="90.5" y="15" width="82.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-T7-YU2">
+                                <rect key="frame" x="10" y="10" width="70.5" height="70.5"/>
+                                <connections>
+                                    <action selector="profileButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xIr-CL-R1l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Michael Brown" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keB-q0-Deo">
+                                <rect key="frame" x="175" y="16.5" width="182" height="13.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License Plate No:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhH-KD-10P">
+                                <rect key="frame" x="90.5" y="35" width="107.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="AXCD0004152723" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeV-rn-XFm">
+                                <rect key="frame" x="199.5" y="36" width="157" height="13.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXi-IQ-BfU" customClass="RatingView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="7" y="86" width="78" height="22.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLr-UB-WOt">
+                                <rect key="frame" x="90.5" y="54.5" width="85.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Sedan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqy-HD-6PN">
+                                <rect key="frame" x="177" y="56.5" width="179.5" height="13.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancelled Trips:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2f-Lq-VXC">
+                                <rect key="frame" x="91" y="75.5" width="101" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Sedan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-oh-lAZ">
+                                <rect key="frame" x="193" y="77" width="163.5" height="13.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xo5-oh-lAZ" firstAttribute="leading" secondItem="y2f-Lq-VXC" secondAttribute="trailing" constant="1" id="4gY-M8-ELD"/>
+                            <constraint firstItem="UX5-T7-YU2" firstAttribute="leading" secondItem="g7d-4Q-xu5" secondAttribute="leading" id="5KU-Fx-AxP"/>
+                            <constraint firstItem="y2f-Lq-VXC" firstAttribute="top" secondItem="qLr-UB-WOt" secondAttribute="bottom" constant="5" id="8ZL-oB-1MU"/>
+                            <constraint firstItem="UX5-T7-YU2" firstAttribute="trailing" secondItem="g7d-4Q-xu5" secondAttribute="trailing" id="Ckx-wU-n3G"/>
+                            <constraint firstItem="g7d-4Q-xu5" firstAttribute="leading" secondItem="sh1-ud-P3K" secondAttribute="leading" constant="10" id="E8x-zg-Vgh"/>
+                            <constraint firstItem="XXi-IQ-BfU" firstAttribute="centerX" secondItem="g7d-4Q-xu5" secondAttribute="centerX" id="Gl8-6s-Xfo"/>
+                            <constraint firstItem="fhH-KD-10P" firstAttribute="leading" secondItem="aZH-LE-EFv" secondAttribute="leading" id="IhR-Gf-hde"/>
+                            <constraint firstItem="Rqy-HD-6PN" firstAttribute="leading" secondItem="qLr-UB-WOt" secondAttribute="trailing" constant="1" id="Roi-pG-6CL"/>
+                            <constraint firstItem="TeV-rn-XFm" firstAttribute="leading" secondItem="fhH-KD-10P" secondAttribute="trailing" constant="2" id="Scc-rU-pla"/>
+                            <constraint firstAttribute="trailing" secondItem="keB-q0-Deo" secondAttribute="trailing" constant="5" id="TEq-fZ-PGu"/>
+                            <constraint firstItem="qLr-UB-WOt" firstAttribute="leading" secondItem="fhH-KD-10P" secondAttribute="leading" id="Wvr-cC-eL6"/>
+                            <constraint firstItem="keB-q0-Deo" firstAttribute="leading" secondItem="aZH-LE-EFv" secondAttribute="trailing" constant="2" id="XRF-mf-90c"/>
+                            <constraint firstItem="keB-q0-Deo" firstAttribute="centerY" secondItem="aZH-LE-EFv" secondAttribute="centerY" id="b9g-Eo-XxQ"/>
+                            <constraint firstAttribute="bottom" secondItem="XXi-IQ-BfU" secondAttribute="bottom" constant="10" id="bwC-71-oen"/>
+                            <constraint firstItem="g7d-4Q-xu5" firstAttribute="top" secondItem="sh1-ud-P3K" secondAttribute="top" constant="10" id="cgT-yd-iJt"/>
+                            <constraint firstItem="UX5-T7-YU2" firstAttribute="bottom" secondItem="g7d-4Q-xu5" secondAttribute="bottom" id="cmj-R8-nez"/>
+                            <constraint firstItem="TeV-rn-XFm" firstAttribute="centerY" secondItem="fhH-KD-10P" secondAttribute="centerY" id="fAc-Ue-djk"/>
+                            <constraint firstAttribute="trailing" secondItem="TeV-rn-XFm" secondAttribute="trailing" constant="5" id="hrJ-9m-j16"/>
+                            <constraint firstItem="fhH-KD-10P" firstAttribute="top" secondItem="keB-q0-Deo" secondAttribute="bottom" constant="5" id="hrX-eF-ORE"/>
+                            <constraint firstItem="Xo5-oh-lAZ" firstAttribute="centerY" secondItem="y2f-Lq-VXC" secondAttribute="centerY" id="jws-o9-Vns"/>
+                            <constraint firstItem="Xo5-oh-lAZ" firstAttribute="trailing" secondItem="Rqy-HD-6PN" secondAttribute="trailing" id="nDo-dD-yMP"/>
+                            <constraint firstItem="XXi-IQ-BfU" firstAttribute="top" secondItem="g7d-4Q-xu5" secondAttribute="bottom" constant="5" id="nyt-Ww-en0"/>
+                            <constraint firstItem="y2f-Lq-VXC" firstAttribute="leading" secondItem="qLr-UB-WOt" secondAttribute="leading" id="o60-tP-ggW"/>
+                            <constraint firstItem="aZH-LE-EFv" firstAttribute="leading" secondItem="g7d-4Q-xu5" secondAttribute="trailing" constant="10" id="olA-G4-Gg2"/>
+                            <constraint firstItem="UX5-T7-YU2" firstAttribute="top" secondItem="g7d-4Q-xu5" secondAttribute="top" id="r6v-oU-zyO"/>
+                            <constraint firstItem="Rqy-HD-6PN" firstAttribute="centerY" secondItem="qLr-UB-WOt" secondAttribute="centerY" id="rYc-s0-6k9"/>
+                            <constraint firstItem="aZH-LE-EFv" firstAttribute="top" secondItem="g7d-4Q-xu5" secondAttribute="top" constant="5" id="xWG-PX-aRO"/>
+                            <constraint firstItem="qLr-UB-WOt" firstAttribute="top" secondItem="TeV-rn-XFm" secondAttribute="bottom" constant="5" id="z6j-8Z-sHD"/>
+                            <constraint firstItem="Rqy-HD-6PN" firstAttribute="trailing" secondItem="TeV-rn-XFm" secondAttribute="trailing" id="zw1-Ye-1LD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="sh1-ud-P3K" secondAttribute="bottom" id="MJK-OW-3JZ"/>
+                    <constraint firstItem="sh1-ud-P3K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VHN-u3-ud5"/>
+                    <constraint firstAttribute="trailing" secondItem="sh1-ud-P3K" secondAttribute="trailing" id="ihX-Cc-hmu"/>
+                    <constraint firstItem="sh1-ud-P3K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jSz-CG-mxC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cancelledHeadingLabel" destination="y2f-Lq-VXC" id="mP2-aX-bQw"/>
+                <outlet property="cancelledLabel" destination="Xo5-oh-lAZ" id="k1o-gD-42t"/>
+                <outlet property="driverNameLabel" destination="keB-q0-Deo" id="z2C-y0-GbI"/>
+                <outlet property="headingLabel" destination="aZH-LE-EFv" id="Nb5-Vg-mcR"/>
+                <outlet property="licenseHeadingLabel" destination="fhH-KD-10P" id="cne-DE-QBZ"/>
+                <outlet property="licenseNumberLabel" destination="TeV-rn-XFm" id="JYS-px-cpY"/>
+                <outlet property="profileButton" destination="UX5-T7-YU2" id="pwy-wD-J6k"/>
+                <outlet property="profileImageView" destination="g7d-4Q-xu5" id="DZn-Zw-Ic3"/>
+                <outlet property="ratingView" destination="XXi-IQ-BfU" id="DuO-nU-NNX"/>
+                <outlet property="vehicleHeadingLabel" destination="qLr-UB-WOt" id="LM2-O7-IeJ"/>
+                <outlet property="vehicleTypeLabel" destination="Rqy-HD-6PN" id="Syi-at-jTQ"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="104.5"/>
+        </tableViewCell>
+    </objects>
+</document>

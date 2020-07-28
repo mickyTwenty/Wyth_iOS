@@ -1,0 +1,67 @@
+//
+//  UpComingTripCell.swift
+//  SeatUs
+//
+//  Created by Syed Muhammad Muzzammil on 22/11/2017.
+//  Copyright © 2017 Qazi Naveed. All rights reserved.
+//
+
+import UIKit
+
+protocol UpComingTripsCellDelegate : class  {
+    func onClickViewDetail(UpComingTripsCell index: Int,_ sender: Any)
+}
+
+class UpComingTripsCell: UITableViewCell {
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tripNameLable: UILabel!
+    @IBOutlet weak var originLable: UILabel!
+    @IBOutlet weak var destinationLable: UILabel!
+    @IBOutlet weak var dateLable: UILabel!
+    @IBOutlet weak var seatsLabel: UILabel!
+    
+    weak var delegate : UpComingTripsCellDelegate!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func onClickViewDetail(_ sender: Any) {
+        if delegate != nil {
+            delegate?.onClickViewDetail(UpComingTripsCell: self.tag,sender)
+        }
+    }
+    
+    func setDetails(trip:  Trip){
+        tripNameLable.text = trip.getTripIdOrTripName()
+        
+        if Utility.isDriver() {
+            tripNameLable.text = trip.getTripIdOrTripName()
+            //tripNameLable.text = (trip.trip_id?.stringValue)!
+        }
+        else {
+            titleLabel.text = MyTripsConstant.DriverHeading
+            if let passenger = trip.passenger {
+                tripNameLable.text = (passenger.first_name ?? "") + " " + (passenger.last_name ?? "")
+            }
+        }
+
+        originLable.text = trip.origin_title
+        destinationLable.text = trip.destination_title
+        
+        //seatsLabel.text = String(Passenger.getAvailableSeats(passengers: (trip.passengers)!)) + " of " +  (trip.seats_total?.stringValue)! + " seats filled"
+        
+        //dateLable.text = trip.date
+        //if(!(trip.start_time?.contains("00:00:00") ?? true)) {
+        //    let convertedTime = Utility.getFormatedDate(sourceDate: trip.start_time!, sourceDateFormat: ApplicationConstants.DateTimeServerFormat, destinationDateFormat: ApplicationConstants.TimeFormat_12)
+        //    let dateTime = trip.date! + " - " + convertedTime
+        //    dateLable.text = dateTime
+        //}
+    }
+}
+

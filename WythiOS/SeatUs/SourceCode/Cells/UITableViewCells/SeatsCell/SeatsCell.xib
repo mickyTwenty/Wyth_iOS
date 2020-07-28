@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeatsCell" id="KGk-i7-Jjw" customClass="SeatsCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-q1-wIr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="container_active_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="D4J-Im-V82">
+                                <rect key="frame" x="10" y="11.5" width="12" height="11"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Time of Day :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbT-zo-Wh5">
+                                <rect key="frame" x="32" y="8" width="83" height="16.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-Sn-RpV" userLabel="Sep1">
+                                <rect key="frame" x="16" y="27.5" width="1" height="15"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="BOm-uM-R0L"/>
+                                    <constraint firstAttribute="width" constant="1" id="k9A-VZ-Ywh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNx-Op-4mG" customClass="BadgeButtonView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="137" y="4" width="142" height="25"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JNx-Op-4mG" firstAttribute="leading" secondItem="cbT-zo-Wh5" secondAttribute="trailing" constant="5" id="2SR-Vf-BDw"/>
+                            <constraint firstItem="a8m-Sn-RpV" firstAttribute="centerX" secondItem="D4J-Im-V82" secondAttribute="centerX" id="8xg-ro-PpD"/>
+                            <constraint firstAttribute="bottom" secondItem="a8m-Sn-RpV" secondAttribute="bottom" constant="1" id="EaP-zC-HkU"/>
+                            <constraint firstItem="cbT-zo-Wh5" firstAttribute="centerY" secondItem="D4J-Im-V82" secondAttribute="centerY" id="HSC-MP-aiL"/>
+                            <constraint firstItem="cbT-zo-Wh5" firstAttribute="leading" secondItem="D4J-Im-V82" secondAttribute="trailing" constant="10" id="Ms1-86-oz5"/>
+                            <constraint firstItem="JNx-Op-4mG" firstAttribute="centerY" secondItem="cbT-zo-Wh5" secondAttribute="centerY" id="Q2y-Xn-HaV"/>
+                            <constraint firstItem="cbT-zo-Wh5" firstAttribute="top" secondItem="qTr-q1-wIr" secondAttribute="topMargin" id="fsM-Qy-yMD"/>
+                            <constraint firstItem="D4J-Im-V82" firstAttribute="leading" secondItem="qTr-q1-wIr" secondAttribute="leading" constant="10" id="m8i-DT-MbJ"/>
+                            <constraint firstItem="a8m-Sn-RpV" firstAttribute="top" secondItem="D4J-Im-V82" secondAttribute="bottom" constant="5" id="qq3-3i-Rg4"/>
+                            <constraint firstItem="D4J-Im-V82" firstAttribute="top" secondItem="qTr-q1-wIr" secondAttribute="top" constant="11.5" id="siw-fi-32J"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qTr-q1-wIr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7U5-hq-pxQ"/>
+                    <constraint firstAttribute="bottom" secondItem="qTr-q1-wIr" secondAttribute="bottom" id="H00-6J-41a"/>
+                    <constraint firstAttribute="trailing" secondItem="qTr-q1-wIr" secondAttribute="trailing" id="KXc-Nl-tFx"/>
+                    <constraint firstItem="qTr-q1-wIr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gf5-c6-akA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="badgeButtonView" destination="JNx-Op-4mG" id="dbn-n7-aUM"/>
+                <outlet property="titleLabel" destination="cbT-zo-Wh5" id="9Cv-jS-PBt"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="container_active_bullet" width="12" height="12"/>
+    </resources>
+</document>

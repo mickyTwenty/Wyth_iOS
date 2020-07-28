@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Info Screen</title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet">
+</head>
+
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	list-style:none;
+	text-decoration:none;
+	border:none;
+	box-sizing:border-box;	
+}
+
+body {
+	background:#070605;	
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.infoList {
+	padding:25px;
+	float:left;
+	width:100%;
+}
+
+.infoList li {
+	float: left;
+    width: 100%;
+    border-bottom: solid 1px #999999;
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 25px;
+	position:relative;
+
+}
+
+.infoList li::before {
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    content: "";
+    background: #fff;
+    border-radius: 50px;
+    width: 8px;
+    height: 8px;
+
+}
+
+.infoList li::after {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    content: "";
+    border: solid 2px #59ba49;
+    border-radius: 50px;
+    width: 8px;
+    height: 8px;
+}
+
+.infoList .listheading {
+	color:#59ba49;
+	float:left;
+	width:100%;
+	font-size:20px;
+    padding: 0 0 6px 0;
+}
+
+.infoList .listContent {
+	color:#fff;
+	float:left;
+	width:100%;
+	font-size:14px;
+}
+
+</style>
+
+<body>
+
+
+<ul class="infoList">
+	<li>
+    	<span class="listheading">Profile Picture</span>
+    	<span class="listContent">You can upload picture by simply clicking the pencil icon.</span>
+    </li>
+	<li>
+    	<span class="listheading">Passenger/Driver Menu</span>
+    	<span class="listContent">You can toggle between the passenger and driver interfaces if registered as both.</span>
+    </li>
+	<li>
+    	<span class="listheading">Find Rides</span>
+    	<span class="listContent">You can search for a trip by simply entering the required criteria.</span>
+    </li>
+	<li>
+    	<span class="listheading">My Trips</span>
+    	<span class="listContent">In my trips, you can access all the pending offers, upcoming and past trips.</span>
+    </li>
+	<li>
+    	<span class="listheading">My Payment</span>
+    	<span class="listContent">You can manage your credit card information.</span>
+    </li>
+	<li>
+    	<span class="listheading">Messaging/Chat</span>
+    	<span class="listContent">You are able to perform group chat in this section.</span>
+    </li>
+	<li>
+    	<span class="listheading">Promotions</span>
+    	<span class="listContent">You can manage promo code in this section.</span>
+    </li>
+	<li>
+    	<span class="listheading">Notifications</span>
+    	<span class="listContent">In app notification will be displayed in this section.</span>
+    </li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileImageView" customModule="SeatUs" customModuleProvider="target">
+            <connections>
+                <outlet property="profileImageView" destination="8fl-Eh-AgF" id="iXd-GN-XIA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="116"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-Eh-AgF">
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="116"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_circle" translatesAutoresizingMaskIntoConstraints="NO" id="WlP-5i-3My">
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="116"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WlP-5i-3My" secondAttribute="bottom" id="2wS-AV-aXt"/>
+                <constraint firstItem="WlP-5i-3My" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="8Tb-zs-xAQ"/>
+                <constraint firstItem="WlP-5i-3My" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="G8X-IS-HDk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8fl-Eh-AgF" secondAttribute="bottom" id="Kc5-qf-5us"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8fl-Eh-AgF" secondAttribute="trailing" id="Qe4-Y1-f5Z"/>
+                <constraint firstItem="8fl-Eh-AgF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aHu-Ut-4a5"/>
+                <constraint firstItem="8fl-Eh-AgF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eGn-Hz-8Yi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WlP-5i-3My" secondAttribute="trailing" id="wA1-tP-XuB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-201" y="-414"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_circle" width="70" height="70"/>
+    </resources>
+</document>

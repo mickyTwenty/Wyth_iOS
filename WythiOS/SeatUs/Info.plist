@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>WYTH</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.3</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb296749897492045</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>2f30396b5419338216526ff406207a00ec1130ef</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>‘WYTH’ Would Like To Access Your Photos. Wyth uses your photos to create your profile (For all Photos access)</string>
+	<key>NSContactsUsageDescription</key>
+	<string>WYTH’ Would Like To Access Your Contacts. This allows to Wyth to add your contacts in the App (For all access contact)</string>
+	<key>NSContactsUsageDescription </key>
+	<string>WYTH’ Would Like To Access Your Contacts. This allows to Wyth to add your contacts in the App (For all access contact)</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>‘WYTH’ Would Like To Use Your Current Location. Wyth uses your location in order to track your current whereabout</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>‘WYTH’ Would Like To Use Your Current Location. Wyth uses your location in order to track your current whereabout</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>‘WYTH’ Would Like To Use Your Current Location. Wyth uses your location in order to track your current whereabout</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>‘WYTH’ Would Like To Access Your Microphone.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>‘WYTH’ Would Like To Access Your Photos. Wyth uses your photos to create your profile (For all Photos access)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>‘WYTH’ Would Like To Access Your Photos. Wyth uses your photos to create your profile (For all Photos access)</string>
+	<key>NSPhotoLibraryUsageDescription - 2</key>
+	<string>‘WYTH’ Would Like To Access Your Photos. Wyth uses your photos to create your profile (For all Photos access)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CENTURY_2.TTF</string>
+		<string>GOTHIC_2.TTF</string>
+		<string>GOTHICB_2.TTF</string>
+		<string>GOTHICBI_2.TTF</string>
+		<string>GOTHICI_2.TTF</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

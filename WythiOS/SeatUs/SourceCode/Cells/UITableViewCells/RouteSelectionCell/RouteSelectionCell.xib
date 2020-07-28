@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="RouteSelectionCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cle-eQ-NYT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Route :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNz-UU-tcB">
+                                <rect key="frame" x="10" y="15" width="37" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Possible Passenger:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-5w-1bI">
+                                <rect key="frame" x="10" y="50.5" width="103.5" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="One ( 1 )  sdsd sdsd sdsds sdsd sdsdsd " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n29-Zf-o3L" userLabel="Route Name Value">
+                                <rect key="frame" x="52" y="15" width="141" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ON-IL-54L">
+                                <rect key="frame" x="203" y="15" width="49.5" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXT-3g-adU" userLabel="Time Value">
+                                <rect key="frame" x="285.5" y="51" width="24.5" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends_listing_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-e4-Nif">
+                                <rect key="frame" x="123.5" y="41" width="32" height="32"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends_listing_counter" translatesAutoresizingMaskIntoConstraints="NO" id="E5b-P0-sZ0">
+                                <rect key="frame" x="142.5" y="33" width="23" height="23"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQf-q6-8yp">
+                                <rect key="frame" x="142" y="33" width="23" height="23"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="530 meters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGs-0q-q6l">
+                                <rect key="frame" x="252.5" y="15" width="57.5" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-oD-j11">
+                                <rect key="frame" x="256.5" y="51" width="28" height="13"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gXT-3g-adU" firstAttribute="centerY" secondItem="QTa-5w-1bI" secondAttribute="centerY" id="61D-Jb-wUM"/>
+                            <constraint firstItem="7HT-e4-Nif" firstAttribute="leading" secondItem="QTa-5w-1bI" secondAttribute="trailing" constant="10" id="658-eR-djW"/>
+                            <constraint firstItem="QTa-5w-1bI" firstAttribute="leading" secondItem="yNz-UU-tcB" secondAttribute="leading" id="8K3-s1-OOx"/>
+                            <constraint firstItem="n29-Zf-o3L" firstAttribute="leading" secondItem="yNz-UU-tcB" secondAttribute="trailing" constant="5" id="BMI-Vs-oeq"/>
+                            <constraint firstItem="yNz-UU-tcB" firstAttribute="leading" secondItem="cle-eQ-NYT" secondAttribute="leading" constant="10" id="Cds-sZ-9HT"/>
+                            <constraint firstItem="eQf-q6-8yp" firstAttribute="trailing" secondItem="E5b-P0-sZ0" secondAttribute="trailing" id="Gcx-zo-bwJ"/>
+                            <constraint firstItem="eQf-q6-8yp" firstAttribute="top" secondItem="E5b-P0-sZ0" secondAttribute="top" id="JNv-LA-eJc"/>
+                            <constraint firstItem="vSF-oD-j11" firstAttribute="leading" secondItem="yNz-UU-tcB" secondAttribute="leading" id="Ja1-U3-rlo"/>
+                            <constraint firstItem="7ON-IL-54L" firstAttribute="centerY" secondItem="n29-Zf-o3L" secondAttribute="centerY" id="Owm-uX-jIa"/>
+                            <constraint firstItem="gXT-3g-adU" firstAttribute="leading" secondItem="vSF-oD-j11" secondAttribute="trailing" constant="1" id="Q88-4R-UU6"/>
+                            <constraint firstItem="7HT-e4-Nif" firstAttribute="centerY" secondItem="QTa-5w-1bI" secondAttribute="centerY" id="Qy9-UO-FJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="gXT-3g-adU" secondAttribute="trailing" constant="10" id="Rnd-BF-5gs"/>
+                            <constraint firstItem="7ON-IL-54L" firstAttribute="leading" secondItem="n29-Zf-o3L" secondAttribute="trailing" constant="10" id="Vk0-Ob-anT"/>
+                            <constraint firstItem="vSF-oD-j11" firstAttribute="centerY" secondItem="gXT-3g-adU" secondAttribute="centerY" id="XGy-w0-F8q"/>
+                            <constraint firstItem="FGs-0q-q6l" firstAttribute="leading" secondItem="7ON-IL-54L" secondAttribute="trailing" id="aJh-AN-6n6"/>
+                            <constraint firstItem="7HT-e4-Nif" firstAttribute="top" secondItem="E5b-P0-sZ0" secondAttribute="bottom" constant="-15" id="b0t-wb-XTG"/>
+                            <constraint firstItem="FGs-0q-q6l" firstAttribute="centerY" secondItem="yNz-UU-tcB" secondAttribute="centerY" id="cHM-f5-RpY"/>
+                            <constraint firstItem="yNz-UU-tcB" firstAttribute="top" secondItem="cle-eQ-NYT" secondAttribute="top" constant="15" id="ehg-ng-h5c"/>
+                            <constraint firstItem="eQf-q6-8yp" firstAttribute="leading" secondItem="E5b-P0-sZ0" secondAttribute="leading" id="esE-5R-I4f"/>
+                            <constraint firstItem="E5b-P0-sZ0" firstAttribute="top" secondItem="n29-Zf-o3L" secondAttribute="bottom" constant="5" id="h9B-OS-cia"/>
+                            <constraint firstItem="eQf-q6-8yp" firstAttribute="bottom" secondItem="E5b-P0-sZ0" secondAttribute="bottom" id="kPi-v7-2AU"/>
+                            <constraint firstItem="n29-Zf-o3L" firstAttribute="centerY" secondItem="yNz-UU-tcB" secondAttribute="centerY" id="nu5-3P-IAY"/>
+                            <constraint firstItem="E5b-P0-sZ0" firstAttribute="trailing" secondItem="7HT-e4-Nif" secondAttribute="trailing" constant="10" id="taz-df-dKq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ja1-U3-rlo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cle-eQ-NYT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PNg-ga-bPB"/>
+                    <constraint firstAttribute="trailing" secondItem="cle-eQ-NYT" secondAttribute="trailing" id="V3O-5U-1Hy"/>
+                    <constraint firstAttribute="bottom" secondItem="cle-eQ-NYT" secondAttribute="bottom" id="YOS-cA-x9V"/>
+                    <constraint firstAttribute="trailing" secondItem="FGs-0q-q6l" secondAttribute="trailing" constant="10" id="oGh-77-Iba"/>
+                    <constraint firstItem="cle-eQ-NYT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tbq-zN-TVh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="circleImageView" destination="E5b-P0-sZ0" id="1RQ-43-lMg"/>
+                <outlet property="distanceLabel" destination="FGs-0q-q6l" id="zsH-Cb-xSN"/>
+                <outlet property="durationLabel" destination="gXT-3g-adU" id="4gi-xk-BKv"/>
+                <outlet property="leadingConstraintOnTimeLbl" destination="Ja1-U3-rlo" id="14j-0c-LGR"/>
+                <outlet property="listingIconImageView" destination="7HT-e4-Nif" id="6fV-JM-x08"/>
+                <outlet property="possiblePassengerLabel" destination="QTa-5w-1bI" id="OSF-n8-GFA"/>
+                <outlet property="routeNameLabel" destination="n29-Zf-o3L" id="qsc-yG-aU8"/>
+                <outlet property="seatsLabel" destination="eQf-q6-8yp" id="4Kx-u8-KpP"/>
+                <outlet property="trailingConstraintOnTimeLbl" destination="Rnd-BF-5gs" id="j4X-lU-yTd"/>
+            </connections>
+            <point key="canvasLocation" x="42" y="90"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="friends_listing_counter" width="23" height="23"/>
+        <image name="friends_listing_icon" width="32" height="32"/>
+    </resources>
+</document>

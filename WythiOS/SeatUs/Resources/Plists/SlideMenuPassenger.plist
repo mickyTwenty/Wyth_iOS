@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Find Ride</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>PassengerTripController</string>
+		<key>navigationTitle</key>
+		<string>FIND RIDE</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>My Trips</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>MyTripsViewController</string>
+		<key>navigationTitle</key>
+		<string>MY TRIPS</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Pending Offers</string>
+				<key>icon</key>
+				<string></string>
+				<key>subcontrollerId</key>
+				<string></string>
+				<key>shouldShow</key>
+				<true/>
+				<key>navigationTitle</key>
+				<string></string>
+				<key>cellIdentifier</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Upcoming Trips</string>
+				<key>icon</key>
+				<string></string>
+				<key>subcontrollerId</key>
+				<string></string>
+				<key>shouldShow</key>
+				<true/>
+				<key>navigationTitle</key>
+				<string></string>
+				<key>cellIdentifier</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Past Trips</string>
+				<key>icon</key>
+				<string></string>
+				<key>subcontrollerId</key>
+				<string></string>
+				<key>shouldShow</key>
+				<true/>
+				<key>navigationTitle</key>
+				<string></string>
+				<key>cellIdentifier</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>My Payments</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>PaymentViewController</string>
+		<key>navigationTitle</key>
+		<string>MY PAYMENTS</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Messaging/Chat</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>MessagingViewController</string>
+		<key>navigationTitle</key>
+		<string>MESSAGING</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuChatCell</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Notifications</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>NotificationsViewController</string>
+		<key>navigationTitle</key>
+		<string>NOTIFICATIONS</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuNotificationHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Invite Friends</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>InvitePeoplePopUp</string>
+		<key>navigationTitle</key>
+		<string></string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Contact Us</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>ContactUsViewController</string>
+		<key>navigationTitle</key>
+		<string>CONTACT US</string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Logout</string>
+		<key>shouldShow</key>
+		<true/>
+		<key>icon</key>
+		<string>bullet</string>
+		<key>controllerId</key>
+		<string>LogOutViewController</string>
+		<key>navigationTitle</key>
+		<string></string>
+		<key>cellIdentifier</key>
+		<string>SideMenuHeader</string>
+		<key>subCategories</key>
+		<array/>
+	</dict>
+</array>
+</plist>

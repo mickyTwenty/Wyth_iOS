@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpAlertView" customModule="SeatUs" customModuleProvider="target">
+            <connections>
+                <outlet property="alertLable" destination="l6V-Zb-z9i" id="Xka-Rs-nCB"/>
+                <outlet property="alertNoButton" destination="ARB-tH-Dgc" id="IcP-XW-3cA"/>
+                <outlet property="alertOkButton" destination="Cdh-wz-BWd" id="3Ol-tr-Mdj"/>
+                <outlet property="alertYesButton" destination="1ch-fb-g4o" id="w5P-9k-77O"/>
+                <outlet property="doubleButtonsView" destination="ehn-br-FI9" id="SRp-Mw-o3N"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="151"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-Lk-BtK" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="377" height="151"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test nessage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6V-Zb-z9i">
+                            <rect key="frame" x="10" y="5" width="357" height="15"/>
+                            <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdh-wz-BWd">
+                            <rect key="frame" x="132.5" y="25" width="112" height="26"/>
+                            <state key="normal" image="aler-ok"/>
+                            <connections>
+                                <action selector="okButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="lXn-aX-cRf"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-br-FI9">
+                            <rect key="frame" x="71" y="25" width="234" height="26"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ch-fb-g4o">
+                                    <rect key="frame" x="122" y="0.0" width="112" height="26"/>
+                                    <state key="normal" image="alert_yes_btn"/>
+                                    <connections>
+                                        <action selector="onYesButtonClicked:" destination="-1" eventType="touchUpInside" id="Qox-uE-Igg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-tH-Dgc">
+                                    <rect key="frame" x="0.0" y="0.0" width="112" height="26"/>
+                                    <state key="normal" image="alert_no_btn"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1ch-fb-g4o" firstAttribute="leading" secondItem="ARB-tH-Dgc" secondAttribute="trailing" constant="10" id="FKK-oC-d02"/>
+                                <constraint firstItem="1ch-fb-g4o" firstAttribute="top" secondItem="ehn-br-FI9" secondAttribute="top" id="KIt-bv-KKP"/>
+                                <constraint firstItem="ARB-tH-Dgc" firstAttribute="top" secondItem="ehn-br-FI9" secondAttribute="top" id="Pk1-FJ-0MJ"/>
+                                <constraint firstAttribute="trailing" secondItem="1ch-fb-g4o" secondAttribute="trailing" id="UhY-6B-auG"/>
+                                <constraint firstItem="ARB-tH-Dgc" firstAttribute="leading" secondItem="ehn-br-FI9" secondAttribute="leading" id="Z2T-P6-EBW"/>
+                                <constraint firstAttribute="bottom" secondItem="1ch-fb-g4o" secondAttribute="bottom" id="oQf-vJ-Qm7"/>
+                                <constraint firstAttribute="bottom" secondItem="ARB-tH-Dgc" secondAttribute="bottom" id="zpN-AN-SQF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.33179429170000002" green="0.68807816509999997" blue="0.27090260389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cdh-wz-BWd" secondAttribute="bottom" constant="5" id="3Rg-Ia-d95"/>
+                        <constraint firstItem="Cdh-wz-BWd" firstAttribute="top" secondItem="l6V-Zb-z9i" secondAttribute="bottom" constant="5" id="Hvg-Am-Brh"/>
+                        <constraint firstItem="ehn-br-FI9" firstAttribute="top" secondItem="Cdh-wz-BWd" secondAttribute="top" id="LG7-AJ-TDT"/>
+                        <constraint firstAttribute="trailing" secondItem="l6V-Zb-z9i" secondAttribute="trailing" constant="10" id="UBa-YF-4yz"/>
+                        <constraint firstItem="Cdh-wz-BWd" firstAttribute="centerX" secondItem="bJl-Lk-BtK" secondAttribute="centerX" id="dnP-OA-ooe"/>
+                        <constraint firstItem="ehn-br-FI9" firstAttribute="centerX" secondItem="bJl-Lk-BtK" secondAttribute="centerX" id="huH-ei-fQ6"/>
+                        <constraint firstItem="l6V-Zb-z9i" firstAttribute="leading" secondItem="bJl-Lk-BtK" secondAttribute="leading" constant="10" id="ipz-cD-1bk"/>
+                        <constraint firstItem="l6V-Zb-z9i" firstAttribute="top" secondItem="bJl-Lk-BtK" secondAttribute="top" constant="5" id="o55-Ev-jgl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bJl-Lk-BtK" secondAttribute="trailing" id="29Y-3A-g5k"/>
+                <constraint firstItem="bJl-Lk-BtK" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5YI-fu-MzO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="bJl-Lk-BtK" secondAttribute="top" id="Ycv-zL-Dy7"/>
+                <constraint firstItem="bJl-Lk-BtK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wmn-me-HDR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="35.5" y="-204.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="aler-ok" width="112" height="26"/>
+        <image name="alert_no_btn" width="112" height="26"/>
+        <image name="alert_yes_btn" width="112" height="26"/>
+    </resources>
+</document>

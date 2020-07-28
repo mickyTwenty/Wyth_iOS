@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LabelCheckBoxCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIc-QT-YBl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="container_active_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="ZOo-7B-Y2C">
+                                <rect key="frame" x="10" y="11.5" width="12" height="11"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date of Birth :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4w-D6-3tT">
+                                <rect key="frame" x="32" y="8" width="87" height="16.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c5-5O-HaX" userLabel="Sep1">
+                                <rect key="frame" x="16" y="27.5" width="1" height="15"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="HRX-tg-6Br"/>
+                                    <constraint firstAttribute="height" constant="15" id="PKh-zO-Xsc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUO-ss-Nun" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="123" y="8" width="188" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="typeView">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l4w-D6-3tT" firstAttribute="centerY" secondItem="ZOo-7B-Y2C" secondAttribute="centerY" id="5Nb-Tw-fse"/>
+                            <constraint firstItem="9c5-5O-HaX" firstAttribute="centerX" secondItem="ZOo-7B-Y2C" secondAttribute="centerX" id="7fI-Pc-gON"/>
+                            <constraint firstAttribute="bottom" secondItem="9c5-5O-HaX" secondAttribute="bottom" constant="1" id="9jc-lj-meB"/>
+                            <constraint firstItem="ZOo-7B-Y2C" firstAttribute="top" secondItem="gIc-QT-YBl" secondAttribute="top" constant="11.5" id="BRe-mr-E79"/>
+                            <constraint firstItem="nUO-ss-Nun" firstAttribute="leading" secondItem="l4w-D6-3tT" secondAttribute="trailing" constant="1" id="DYB-56-QK2"/>
+                            <constraint firstItem="l4w-D6-3tT" firstAttribute="top" secondItem="gIc-QT-YBl" secondAttribute="topMargin" id="Dbi-gq-9tv"/>
+                            <constraint firstAttribute="trailing" secondItem="nUO-ss-Nun" secondAttribute="trailing" constant="10" id="R4C-HD-m5d"/>
+                            <constraint firstItem="l4w-D6-3tT" firstAttribute="leading" secondItem="ZOo-7B-Y2C" secondAttribute="trailing" constant="10" id="Ujc-YT-ify"/>
+                            <constraint firstItem="nUO-ss-Nun" firstAttribute="centerY" secondItem="l4w-D6-3tT" secondAttribute="centerY" id="Xm0-IB-cMu"/>
+                            <constraint firstItem="9c5-5O-HaX" firstAttribute="top" secondItem="ZOo-7B-Y2C" secondAttribute="bottom" constant="5" id="swD-F0-aUY"/>
+                            <constraint firstItem="ZOo-7B-Y2C" firstAttribute="leading" secondItem="gIc-QT-YBl" secondAttribute="leading" constant="10" id="yD7-RN-giY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gIc-QT-YBl" secondAttribute="trailing" id="9QP-l4-Aq9"/>
+                    <constraint firstItem="gIc-QT-YBl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MlM-U5-zUE"/>
+                    <constraint firstAttribute="bottom" secondItem="gIc-QT-YBl" secondAttribute="bottom" id="Wxd-Bs-vgo"/>
+                    <constraint firstItem="gIc-QT-YBl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="r8P-Wf-Wra"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkBoxView" destination="nUO-ss-Nun" id="e8x-iL-yF7"/>
+                <outlet property="separatorView" destination="9c5-5O-HaX" id="KyZ-Kg-DCP"/>
+                <outlet property="titleLabel" destination="l4w-D6-3tT" id="8Ks-uc-bQQ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="container_active_bullet" width="12" height="12"/>
+    </resources>
+</document>

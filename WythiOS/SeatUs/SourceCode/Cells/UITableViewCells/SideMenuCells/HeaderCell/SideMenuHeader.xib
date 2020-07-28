@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuHeader" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYK-re-oY3">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="67"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullet" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-SZ-RYv">
+                            <rect key="frame" x="10" y="25" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0I-Lk-eTc">
+                            <rect key="frame" x="46" y="24" width="81" height="20"/>
+                            <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprator" translatesAutoresizingMaskIntoConstraints="NO" id="ExK-zJ-qeZ">
+                            <rect key="frame" x="0.0" y="66" width="390" height="1"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-Uz-PIJ">
+                            <rect key="frame" x="151" y="31.5" width="10" height="5"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="A0k-Uz-PIJ" firstAttribute="centerY" secondItem="x0I-Lk-eTc" secondAttribute="centerY" id="9hc-mp-5Hk"/>
+                        <constraint firstAttribute="trailing" secondItem="ExK-zJ-qeZ" secondAttribute="trailing" id="ZTX-7U-Xvd"/>
+                        <constraint firstItem="Sby-SZ-RYv" firstAttribute="centerY" secondItem="VYK-re-oY3" secondAttribute="centerY" id="ds6-G1-MYI"/>
+                        <constraint firstItem="x0I-Lk-eTc" firstAttribute="leading" secondItem="Sby-SZ-RYv" secondAttribute="trailing" constant="20" id="dtp-Lg-dAG"/>
+                        <constraint firstItem="ExK-zJ-qeZ" firstAttribute="leading" secondItem="VYK-re-oY3" secondAttribute="leading" id="fph-bX-PYg"/>
+                        <constraint firstAttribute="bottom" secondItem="ExK-zJ-qeZ" secondAttribute="bottom" id="lf1-3t-A11"/>
+                        <constraint firstItem="A0k-Uz-PIJ" firstAttribute="leading" secondItem="x0I-Lk-eTc" secondAttribute="trailing" constant="24" id="nhU-6h-s8I"/>
+                        <constraint firstItem="Sby-SZ-RYv" firstAttribute="leading" secondItem="VYK-re-oY3" secondAttribute="leading" constant="10" id="ouo-ke-sGG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="x0I-Lk-eTc" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="HkA-LR-AWh"/>
+                <constraint firstAttribute="bottom" secondItem="VYK-re-oY3" secondAttribute="bottom" id="ZH9-BH-69G"/>
+                <constraint firstItem="VYK-re-oY3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hAI-9k-sC4"/>
+                <constraint firstItem="VYK-re-oY3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kns-wF-w5R"/>
+                <constraint firstAttribute="trailing" secondItem="VYK-re-oY3" secondAttribute="trailing" id="tod-UR-Gs2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="downArrowImageView" destination="A0k-Uz-PIJ" id="GK3-5K-NgB"/>
+                <outlet property="headerLbl" destination="x0I-Lk-eTc" id="Owo-Aw-lp1"/>
+                <outlet property="headerTitleImageView" destination="Sby-SZ-RYv" id="6wN-x3-cUr"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="-246.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bullet" width="16" height="16"/>
+        <image name="drop_down_arrow" width="10" height="5"/>
+        <image name="seprator" width="1" height="1"/>
+    </resources>
+</document>

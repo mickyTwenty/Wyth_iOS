@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="RideEstimateWithBookNow" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Book Now :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKP-6M-fLa">
+                        <rect key="frame" x="227.5" y="5" width="76.5" height="41.5"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IQ-Kq-kKc">
+                        <rect key="frame" x="309" y="12.5" width="43" height="26"/>
+                        <state key="normal" image="inactive_booknow_toggle"/>
+                        <state key="selected" image="active_booknow_toggle"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 40.5 - $ 80.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxu-1D-s8Y">
+                        <rect key="frame" x="85" y="18" width="84" height="16"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Estimate :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhh-do-M9x">
+                        <rect key="frame" x="20" y="16.5" width="64.5" height="17.5"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pxu-1D-s8Y" firstAttribute="centerY" secondItem="YKP-6M-fLa" secondAttribute="centerY" id="01G-Je-POY"/>
+                    <constraint firstItem="1IQ-Kq-kKc" firstAttribute="centerY" secondItem="YKP-6M-fLa" secondAttribute="centerY" id="3gx-lC-rdF"/>
+                    <constraint firstItem="1IQ-Kq-kKc" firstAttribute="leading" secondItem="YKP-6M-fLa" secondAttribute="trailing" constant="5" id="DHb-sd-rCx"/>
+                    <constraint firstAttribute="bottom" secondItem="YKP-6M-fLa" secondAttribute="bottom" constant="20" id="RDx-Jl-iMb"/>
+                    <constraint firstItem="Uhh-do-M9x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Tnt-HK-Eec"/>
+                    <constraint firstItem="YKP-6M-fLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="lhR-rA-6CO"/>
+                    <constraint firstAttribute="trailing" secondItem="1IQ-Kq-kKc" secondAttribute="trailing" constant="20" id="rE6-oL-xnC"/>
+                    <constraint firstItem="Pxu-1D-s8Y" firstAttribute="centerY" secondItem="Uhh-do-M9x" secondAttribute="centerY" id="rYs-Lc-kOp"/>
+                    <constraint firstItem="Pxu-1D-s8Y" firstAttribute="leading" secondItem="Uhh-do-M9x" secondAttribute="trailing" constant="1" id="wkh-hv-0fS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="75" y="98.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="active_booknow_toggle" width="43" height="26"/>
+        <image name="inactive_booknow_toggle" width="43" height="26"/>
+    </resources>
+</document>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SignUpTableViewCell" id="KGk-i7-Jjw" customClass="SignUpTableViewCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Eyq-Pf-6aV">
+                        <rect key="frame" x="3" y="12" width="17" height="20"/>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-n9-pqo" customClass="ValidaterTextField" customModule="SeatUs" customModuleProvider="target">
+                        <rect key="frame" x="35" y="5" width="280" height="33.5"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="17"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                        <connections>
+                            <outlet property="presentInView" destination="H2p-sc-9uM" id="xr6-mt-mHU"/>
+                        </connections>
+                    </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field" translatesAutoresizingMaskIntoConstraints="NO" id="OqF-9w-FfT">
+                        <rect key="frame" x="0.0" y="39.5" width="320" height="4"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-UM-BLl" userLabel="ActionView">
+                        <rect key="frame" x="35" y="5" width="270" height="33.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-XQ-2yL">
+                                <rect key="frame" x="260" y="13.5" width="10" height="5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mm0-r4-JLE">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="33.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9fv-XQ-2yL" secondAttribute="trailing" id="IJ1-zo-nsy"/>
+                            <constraint firstAttribute="trailing" secondItem="mm0-r4-JLE" secondAttribute="trailing" id="PXq-uG-UKI"/>
+                            <constraint firstItem="mm0-r4-JLE" firstAttribute="leading" secondItem="Gwo-UM-BLl" secondAttribute="leading" id="QkO-5q-5YN"/>
+                            <constraint firstItem="mm0-r4-JLE" firstAttribute="top" secondItem="Gwo-UM-BLl" secondAttribute="top" id="Szt-03-Af5"/>
+                            <constraint firstAttribute="bottom" secondItem="mm0-r4-JLE" secondAttribute="bottom" id="Wvj-hK-2dk"/>
+                            <constraint firstItem="9fv-XQ-2yL" firstAttribute="centerY" secondItem="Gwo-UM-BLl" secondAttribute="centerY" id="bab-NI-5tk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Gwo-UM-BLl" firstAttribute="bottom" secondItem="FL2-n9-pqo" secondAttribute="bottom" id="98G-QE-QTL"/>
+                    <constraint firstItem="FL2-n9-pqo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="HrM-7e-sVE"/>
+                    <constraint firstItem="OqF-9w-FfT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TFH-6A-vb7"/>
+                    <constraint firstItem="Gwo-UM-BLl" firstAttribute="top" secondItem="FL2-n9-pqo" secondAttribute="top" id="YVf-MU-gVn"/>
+                    <constraint firstAttribute="bottom" secondItem="FL2-n9-pqo" secondAttribute="bottom" constant="5" id="Yhw-tq-g42"/>
+                    <constraint firstItem="Eyq-Pf-6aV" firstAttribute="centerY" secondItem="FL2-n9-pqo" secondAttribute="centerY" id="gBo-CP-ooz"/>
+                    <constraint firstItem="FL2-n9-pqo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="gvg-PQ-a2K"/>
+                    <constraint firstAttribute="trailing" secondItem="Gwo-UM-BLl" secondAttribute="trailing" constant="15" id="hHl-9M-ypp"/>
+                    <constraint firstItem="Eyq-Pf-6aV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="lii-oM-Gn9"/>
+                    <constraint firstItem="Gwo-UM-BLl" firstAttribute="leading" secondItem="FL2-n9-pqo" secondAttribute="leading" id="sow-qJ-3n5"/>
+                    <constraint firstAttribute="bottom" secondItem="OqF-9w-FfT" secondAttribute="bottom" id="w5O-7V-cA5"/>
+                    <constraint firstAttribute="trailing" secondItem="OqF-9w-FfT" secondAttribute="trailing" id="z5u-CS-hpZ"/>
+                    <constraint firstAttribute="trailing" secondItem="FL2-n9-pqo" secondAttribute="trailing" constant="5" id="zmR-8x-HeM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="actionButton" destination="mm0-r4-JLE" id="kCr-hA-Qrz"/>
+                <outlet property="actionParentView" destination="Gwo-UM-BLl" id="Fak-2w-pbq"/>
+                <outlet property="dropDownImageView" destination="9fv-XQ-2yL" id="U9B-a3-4mb"/>
+                <outlet property="textField" destination="FL2-n9-pqo" id="jw7-cP-cCI"/>
+                <outlet property="textFieldImageView" destination="OqF-9w-FfT" id="mKM-0h-Q5V"/>
+                <outlet property="titleImageView" destination="Eyq-Pf-6aV" id="RMG-vD-dCh"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="drop_down_arrow" width="10" height="5"/>
+        <image name="field" width="289" height="4"/>
+        <image name="user_icon" width="17" height="20"/>
+    </resources>
+</document>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuChatCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="63"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messaging/Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDY-Wn-d1a">
+                    <rect key="frame" x="46" y="21" width="137.5" height="21"/>
+                    <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullet" translatesAutoresizingMaskIntoConstraints="NO" id="mtd-Vu-BTG">
+                    <rect key="frame" x="10" y="23" width="16" height="16"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprator" translatesAutoresizingMaskIntoConstraints="NO" id="F0c-gl-7Ed">
+                    <rect key="frame" x="0.0" y="62" width="432" height="1"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="counter_bg" translatesAutoresizingMaskIntoConstraints="NO" id="YjQ-0j-TSf">
+                    <rect key="frame" x="392" y="21" width="20" height="20"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8q-Sh-rlZ">
+                    <rect key="frame" x="392" y="21.5" width="20" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="c8q-Sh-rlZ" firstAttribute="leading" secondItem="YjQ-0j-TSf" secondAttribute="leading" id="19g-N7-FWa"/>
+                <constraint firstItem="mtd-Vu-BTG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="4EG-57-bAm"/>
+                <constraint firstItem="c8q-Sh-rlZ" firstAttribute="trailing" secondItem="YjQ-0j-TSf" secondAttribute="trailing" id="KFd-te-Djd"/>
+                <constraint firstItem="YjQ-0j-TSf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="OnU-Cj-DNI"/>
+                <constraint firstItem="F0c-gl-7Ed" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a8y-8c-2lo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="F0c-gl-7Ed" secondAttribute="bottom" id="dHI-H6-Oe2"/>
+                <constraint firstItem="c8q-Sh-rlZ" firstAttribute="top" secondItem="YjQ-0j-TSf" secondAttribute="top" id="jQp-hD-qBb"/>
+                <constraint firstItem="uDY-Wn-d1a" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="qfk-rd-4PL"/>
+                <constraint firstItem="mtd-Vu-BTG" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="qk9-J8-jrL"/>
+                <constraint firstItem="c8q-Sh-rlZ" firstAttribute="bottom" secondItem="YjQ-0j-TSf" secondAttribute="bottom" id="tKf-7r-rwV"/>
+                <constraint firstAttribute="trailing" secondItem="F0c-gl-7Ed" secondAttribute="trailing" id="wi6-ae-pK2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YjQ-0j-TSf" secondAttribute="trailing" constant="20" id="zSj-0g-kJA"/>
+                <constraint firstItem="uDY-Wn-d1a" firstAttribute="leading" secondItem="mtd-Vu-BTG" secondAttribute="trailing" constant="20" id="zmu-Ra-cxO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="chatCounterImageView" destination="YjQ-0j-TSf" id="xbs-14-0hk"/>
+                <outlet property="chatCounterLbl" destination="c8q-Sh-rlZ" id="chl-VK-x0s"/>
+                <outlet property="headerLbl" destination="uDY-Wn-d1a" id="2Wl-5t-ttv"/>
+                <outlet property="headerTitleImageView" destination="mtd-Vu-BTG" id="ejW-bv-5xr"/>
+            </connections>
+            <point key="canvasLocation" x="123" y="-248.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bullet" width="16" height="16"/>
+        <image name="counter_bg" width="20" height="20"/>
+        <image name="seprator" width="1" height="1"/>
+    </resources>
+</document>

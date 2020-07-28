@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="MarkPassengerTripCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="416" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uR-rs-RJM">
+                        <rect key="frame" x="5" y="0.0" width="406" height="139.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jwz-fe-sBE" customClass="ProfileImageView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="KIp-ZS-e0P"/>
+                                    <constraint firstAttribute="width" constant="70" id="Ng0-D8-JZ9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANK-1c-iP9" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="80" y="18" width="316" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="typeView">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ANK-1c-iP9" firstAttribute="centerY" secondItem="Jwz-fe-sBE" secondAttribute="centerY" id="IVp-Le-YhM"/>
+                            <constraint firstAttribute="trailing" secondItem="ANK-1c-iP9" secondAttribute="trailing" constant="10" id="JqS-Ua-DeD"/>
+                            <constraint firstItem="Jwz-fe-sBE" firstAttribute="top" secondItem="7uR-rs-RJM" secondAttribute="top" id="iLs-vc-hdc"/>
+                            <constraint firstAttribute="bottom" secondItem="Jwz-fe-sBE" secondAttribute="bottom" id="j3r-3c-w4e"/>
+                            <constraint firstItem="ANK-1c-iP9" firstAttribute="leading" secondItem="Jwz-fe-sBE" secondAttribute="trailing" constant="10" id="lUh-DG-u0l"/>
+                            <constraint firstItem="Jwz-fe-sBE" firstAttribute="leading" secondItem="7uR-rs-RJM" secondAttribute="leading" id="xTe-iw-rKw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7uR-rs-RJM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="82c-gH-Z2i"/>
+                    <constraint firstAttribute="trailing" secondItem="7uR-rs-RJM" secondAttribute="trailing" constant="5" id="AVb-eO-zfd"/>
+                    <constraint firstItem="7uR-rs-RJM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Rpe-mZ-vQ6"/>
+                    <constraint firstAttribute="bottom" secondItem="7uR-rs-RJM" secondAttribute="bottom" constant="5" id="bSr-b6-yIo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkboxView" destination="ANK-1c-iP9" id="rxF-1E-XeX"/>
+                <outlet property="profileImageView" destination="Jwz-fe-sBE" id="U9g-NS-huC"/>
+            </connections>
+            <point key="canvasLocation" x="29" y="24.5"/>
+        </tableViewCell>
+    </objects>
+</document>

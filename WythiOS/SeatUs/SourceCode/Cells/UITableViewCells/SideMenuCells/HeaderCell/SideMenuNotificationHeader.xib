@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuNotificationHeader" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="423" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullet" translatesAutoresizingMaskIntoConstraints="NO" id="7tx-3w-t85">
+                    <rect key="frame" x="10" y="24" width="16" height="16"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprator" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-Oa-JDq">
+                    <rect key="frame" x="0.0" y="63" width="423" height="1"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cw-hy-gQ7">
+                    <rect key="frame" x="46" y="22" width="132" height="23"/>
+                    <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="counter_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-0w-kUz">
+                    <rect key="frame" x="383" y="22" width="20" height="20"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmN-iQ-MTy">
+                    <rect key="frame" x="383" y="22" width="20" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BQf-Oa-JDq" secondAttribute="bottom" id="7rE-w4-ceQ"/>
+                <constraint firstItem="BQf-Oa-JDq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JIB-Fu-932"/>
+                <constraint firstItem="7tx-3w-t85" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="R1G-DM-Ted"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Nem-0w-kUz" secondAttribute="trailing" constant="20" id="SqD-tm-enE"/>
+                <constraint firstItem="BmN-iQ-MTy" firstAttribute="leading" secondItem="Nem-0w-kUz" secondAttribute="leading" id="Wlc-0P-oBH"/>
+                <constraint firstItem="Nem-0w-kUz" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="YCR-du-f6h"/>
+                <constraint firstItem="BmN-iQ-MTy" firstAttribute="top" secondItem="Nem-0w-kUz" secondAttribute="top" id="cNv-gJ-Xj7"/>
+                <constraint firstItem="BmN-iQ-MTy" firstAttribute="bottom" secondItem="Nem-0w-kUz" secondAttribute="bottom" id="dVS-6x-9vq"/>
+                <constraint firstItem="BmN-iQ-MTy" firstAttribute="trailing" secondItem="Nem-0w-kUz" secondAttribute="trailing" id="lSP-Tx-A45"/>
+                <constraint firstItem="8cw-hy-gQ7" firstAttribute="leading" secondItem="7tx-3w-t85" secondAttribute="trailing" constant="20" id="n7l-Ww-eVC"/>
+                <constraint firstItem="7tx-3w-t85" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ogT-br-1rT"/>
+                <constraint firstAttribute="trailing" secondItem="BQf-Oa-JDq" secondAttribute="trailing" id="uFr-fh-7Wl"/>
+                <constraint firstItem="8cw-hy-gQ7" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="z3p-Ft-7NL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="headerLbl" destination="8cw-hy-gQ7" id="MxJ-LL-C6W"/>
+                <outlet property="headerTitleImageView" destination="7tx-3w-t85" id="3j3-94-H3Q"/>
+                <outlet property="notificationCounterImageView" destination="Nem-0w-kUz" id="EcC-AJ-DxA"/>
+                <outlet property="notificationCounterLbl" destination="BmN-iQ-MTy" id="l4D-f1-1SO"/>
+            </connections>
+            <point key="canvasLocation" x="292.5" y="-235"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bullet" width="16" height="16"/>
+        <image name="counter_bg" width="20" height="20"/>
+        <image name="seprator" width="1" height="1"/>
+    </resources>
+</document>

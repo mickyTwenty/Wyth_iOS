@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GenderCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ji1-AB-Lte">
+                        <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsA-0r-xdV">
+                        <rect key="frame" x="95" y="16.5" width="33" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjM-au-Mpx">
+                        <rect key="frame" x="25" y="15" width="60" height="21"/>
+                        <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collapse_active_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-bC-945">
+                        <rect key="frame" x="133" y="15.5" width="20" height="20"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxe-ZG-SYU">
+                        <rect key="frame" x="95" y="0.0" width="205" height="44"/>
+                        <connections>
+                            <action selector="onAlertActionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S3f-1W-WsU"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="ji1-AB-Lte" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5CU-Kw-GzE"/>
+                    <constraint firstItem="gUh-bC-945" firstAttribute="leading" secondItem="MsA-0r-xdV" secondAttribute="trailing" constant="5" id="66A-A0-8SB"/>
+                    <constraint firstItem="wxe-ZG-SYU" firstAttribute="top" secondItem="ji1-AB-Lte" secondAttribute="top" id="7z0-m8-u8X"/>
+                    <constraint firstAttribute="trailing" secondItem="ji1-AB-Lte" secondAttribute="trailing" constant="20" id="EMp-2r-Fiu"/>
+                    <constraint firstItem="wxe-ZG-SYU" firstAttribute="leading" secondItem="MsA-0r-xdV" secondAttribute="leading" id="FNw-YC-MXZ"/>
+                    <constraint firstAttribute="bottom" secondItem="HjM-au-Mpx" secondAttribute="bottom" constant="7.5" id="Ouq-lq-WHd"/>
+                    <constraint firstItem="ji1-AB-Lte" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Q1z-vd-M5g"/>
+                    <constraint firstAttribute="bottom" secondItem="ji1-AB-Lte" secondAttribute="bottom" id="YJ7-tB-B5g"/>
+                    <constraint firstItem="wxe-ZG-SYU" firstAttribute="bottom" secondItem="ji1-AB-Lte" secondAttribute="bottom" id="Ycv-nb-sYr"/>
+                    <constraint firstItem="HjM-au-Mpx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="bc0-A6-UsT"/>
+                    <constraint firstItem="wxe-ZG-SYU" firstAttribute="trailing" secondItem="ji1-AB-Lte" secondAttribute="trailing" id="eWC-xp-gSC"/>
+                    <constraint firstItem="gUh-bC-945" firstAttribute="centerY" secondItem="HjM-au-Mpx" secondAttribute="centerY" id="hzc-1O-4Fo"/>
+                    <constraint firstItem="HjM-au-Mpx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="oe8-JR-enz"/>
+                    <constraint firstItem="MsA-0r-xdV" firstAttribute="centerY" secondItem="HjM-au-Mpx" secondAttribute="centerY" id="qBX-qP-Fce"/>
+                    <constraint firstItem="MsA-0r-xdV" firstAttribute="leading" secondItem="HjM-au-Mpx" secondAttribute="trailing" constant="10" id="rBw-Sq-vPI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="genderLabel" destination="MsA-0r-xdV" id="7OU-Nz-jVb"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="collapse_active_arrow" width="20" height="20"/>
+    </resources>
+</document>

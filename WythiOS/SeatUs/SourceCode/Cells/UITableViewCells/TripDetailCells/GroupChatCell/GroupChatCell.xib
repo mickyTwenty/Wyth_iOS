@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GroupChatCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93B-SD-aTF">
+                        <rect key="frame" x="21" y="3" width="278" height="36"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-J3-COv" userLabel="ViewSeatButton">
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="36"/>
+                                <state key="normal" image="view_seat_btn"/>
+                                <connections>
+                                    <action selector="viewSeat:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8cm-Sd-bse"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCJ-40-MbG" userLabel="GroupChatButton">
+                                <rect key="frame" x="144" y="0.0" width="134" height="36"/>
+                                <state key="normal" image="group_chat_btn"/>
+                                <connections>
+                                    <action selector="groupChat:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uZQ-Pn-G1R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zCJ-40-MbG" firstAttribute="top" secondItem="93B-SD-aTF" secondAttribute="top" id="7te-2E-Z0N"/>
+                            <constraint firstAttribute="bottom" secondItem="sfy-J3-COv" secondAttribute="bottom" id="BuJ-ee-72S"/>
+                            <constraint firstAttribute="bottom" secondItem="zCJ-40-MbG" secondAttribute="bottom" id="F63-tr-jpm"/>
+                            <constraint firstItem="sfy-J3-COv" firstAttribute="top" secondItem="93B-SD-aTF" secondAttribute="top" id="GdQ-VX-Tfg"/>
+                            <constraint firstAttribute="trailing" secondItem="zCJ-40-MbG" secondAttribute="trailing" id="KKa-vJ-RQz"/>
+                            <constraint firstItem="sfy-J3-COv" firstAttribute="height" secondItem="zCJ-40-MbG" secondAttribute="height" id="Rpi-ET-FPZ"/>
+                            <constraint firstItem="sfy-J3-COv" firstAttribute="leading" secondItem="93B-SD-aTF" secondAttribute="leading" id="cDn-mU-TeE"/>
+                            <constraint firstItem="zCJ-40-MbG" firstAttribute="leading" secondItem="sfy-J3-COv" secondAttribute="trailing" constant="10" id="dXN-Wv-U1J"/>
+                            <constraint firstItem="sfy-J3-COv" firstAttribute="width" secondItem="zCJ-40-MbG" secondAttribute="width" id="u3q-L5-GdG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="93B-SD-aTF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="B5A-xB-Arf"/>
+                    <constraint firstAttribute="bottom" secondItem="93B-SD-aTF" secondAttribute="bottom" constant="4.5" id="eUi-al-TMo"/>
+                    <constraint firstItem="93B-SD-aTF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rb1-Yr-YrL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="group_chat_btn" width="134" height="36.666667938232422"/>
+        <image name="view_seat_btn" width="134" height="36.666667938232422"/>
+    </resources>
+</document>

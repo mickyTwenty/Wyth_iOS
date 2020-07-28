@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SignUpDriverCell" rowHeight="92" id="KGk-i7-Jjw" customClass="SignUpDriverCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="91.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or_separator" translatesAutoresizingMaskIntoConstraints="NO" id="wov-Zg-l0G">
+                        <rect key="frame" x="5" y="10" width="313" height="9"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flv-1h-KYX">
+                        <rect key="frame" x="5" y="29" width="313" height="57.5"/>
+                        <state key="normal" image="signup_driver_btn"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Flv-1h-KYX" firstAttribute="leading" secondItem="wov-Zg-l0G" secondAttribute="leading" id="4Td-T9-XgG"/>
+                    <constraint firstAttribute="trailing" secondItem="wov-Zg-l0G" secondAttribute="trailing" constant="5" id="Umu-RL-2ni"/>
+                    <constraint firstItem="Flv-1h-KYX" firstAttribute="trailing" secondItem="wov-Zg-l0G" secondAttribute="trailing" id="h7B-Jw-05B"/>
+                    <constraint firstItem="wov-Zg-l0G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nRt-fv-dAv"/>
+                    <constraint firstItem="wov-Zg-l0G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="o4i-lY-vzv"/>
+                    <constraint firstItem="Flv-1h-KYX" firstAttribute="top" secondItem="wov-Zg-l0G" secondAttribute="bottom" constant="10" id="sBf-D4-Al5"/>
+                    <constraint firstAttribute="bottom" secondItem="Flv-1h-KYX" secondAttribute="bottom" constant="5" id="vIC-Ns-m4b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="driverSignUpButton" destination="Flv-1h-KYX" id="S77-wE-6gE"/>
+            </connections>
+            <point key="canvasLocation" x="35.5" y="128"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="or_separator" width="292" height="9"/>
+        <image name="signup_driver_btn" width="289" height="47"/>
+    </resources>
+</document>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DateButtonCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-Rg-uWN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="container_active_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="FGd-Tp-FMr">
+                                <rect key="frame" x="10" y="11.5" width="12" height="11"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhb-ca-Na9">
+                                <rect key="frame" x="32" y="8" width="37.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMz-Xs-f56" userLabel="Sep1">
+                                <rect key="frame" x="16" y="27.5" width="1" height="15"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Htc-rk-N42"/>
+                                    <constraint firstAttribute="width" constant="1" id="hEX-Qh-ZBx"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YEAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn0-Hg-fMc">
+                                <rect key="frame" x="74.5" y="9" width="83.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yza-iT-iWC" userLabel="calender_image">
+                                <rect key="frame" x="163" y="6" width="152" height="22"/>
+                                <state key="normal" image="calendar_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-qn-W7I">
+                                <rect key="frame" x="74.5" y="0.0" width="240.5" height="43.5"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bMz-Xs-f56" firstAttribute="centerX" secondItem="FGd-Tp-FMr" secondAttribute="centerX" id="0cV-6d-H8Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Vn6-qn-W7I" secondAttribute="trailing" constant="5" id="41s-mZ-bsf"/>
+                            <constraint firstItem="kn0-Hg-fMc" firstAttribute="centerY" secondItem="FGd-Tp-FMr" secondAttribute="centerY" id="4iB-PD-EqW"/>
+                            <constraint firstItem="vhb-ca-Na9" firstAttribute="top" secondItem="vFD-Rg-uWN" secondAttribute="topMargin" id="4sV-xK-KWd"/>
+                            <constraint firstItem="kn0-Hg-fMc" firstAttribute="leading" secondItem="vhb-ca-Na9" secondAttribute="trailing" constant="5" id="5XY-zb-aQh"/>
+                            <constraint firstAttribute="bottom" secondItem="Vn6-qn-W7I" secondAttribute="bottom" id="ATJ-7U-8vL"/>
+                            <constraint firstItem="Yza-iT-iWC" firstAttribute="centerY" secondItem="kn0-Hg-fMc" secondAttribute="centerY" id="Dxl-PV-dk4"/>
+                            <constraint firstItem="bMz-Xs-f56" firstAttribute="top" secondItem="FGd-Tp-FMr" secondAttribute="bottom" constant="5" id="FOr-CD-DIR"/>
+                            <constraint firstItem="Yza-iT-iWC" firstAttribute="leading" secondItem="kn0-Hg-fMc" secondAttribute="trailing" constant="5" id="Ff6-JR-8ml"/>
+                            <constraint firstItem="vhb-ca-Na9" firstAttribute="leading" secondItem="FGd-Tp-FMr" secondAttribute="trailing" constant="10" id="KfM-HC-k8q"/>
+                            <constraint firstAttribute="bottom" secondItem="bMz-Xs-f56" secondAttribute="bottom" constant="1" id="LrW-t7-5LM"/>
+                            <constraint firstItem="Vn6-qn-W7I" firstAttribute="top" secondItem="vFD-Rg-uWN" secondAttribute="top" id="Olr-mp-75D"/>
+                            <constraint firstItem="FGd-Tp-FMr" firstAttribute="leading" secondItem="vFD-Rg-uWN" secondAttribute="leading" constant="10" id="QsG-Xg-XHI"/>
+                            <constraint firstItem="vhb-ca-Na9" firstAttribute="centerY" secondItem="FGd-Tp-FMr" secondAttribute="centerY" id="VXn-1D-f0I"/>
+                            <constraint firstAttribute="trailing" secondItem="Yza-iT-iWC" secondAttribute="trailing" constant="5" id="iLu-4B-cfK"/>
+                            <constraint firstItem="FGd-Tp-FMr" firstAttribute="top" secondItem="vFD-Rg-uWN" secondAttribute="top" constant="11.5" id="nks-LI-Uuo"/>
+                            <constraint firstItem="Vn6-qn-W7I" firstAttribute="leading" secondItem="vhb-ca-Na9" secondAttribute="trailing" constant="5" id="zL5-sl-0fC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vFD-Rg-uWN" secondAttribute="trailing" id="GNA-ei-x9o"/>
+                    <constraint firstItem="vFD-Rg-uWN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Rnu-oh-HSX"/>
+                    <constraint firstAttribute="bottom" secondItem="vFD-Rg-uWN" secondAttribute="bottom" id="blm-Ii-Vut"/>
+                    <constraint firstItem="vFD-Rg-uWN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eJO-84-A94"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="callenderImageView" destination="Yza-iT-iWC" id="88W-jg-r8r"/>
+                <outlet property="dateLabel" destination="kn0-Hg-fMc" id="qLm-Lu-eAp"/>
+                <outlet property="headingLabel" destination="vhb-ca-Na9" id="dX6-XD-3dC"/>
+                <outlet property="selectButton" destination="Vn6-qn-W7I" id="Pir-PL-rYi"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="calendar_icon" width="16" height="16"/>
+        <image name="container_active_bullet" width="12" height="12"/>
+    </resources>
+</document>

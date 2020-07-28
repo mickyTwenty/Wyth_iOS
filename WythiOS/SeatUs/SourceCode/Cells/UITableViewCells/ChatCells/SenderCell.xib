@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICI_2.TTF">
+            <string>CenturyGothic-Italic</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="SenderCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Tp-jI-Ao0">
+                        <rect key="frame" x="335" y="10" width="20" height="20"/>
+                        <color key="backgroundColor" red="0.30196078430000001" green="0.67843137249999996" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="7tp-jq-ZXW"/>
+                            <constraint firstAttribute="height" constant="20" id="hYy-7K-pkS"/>
+                        </constraints>
+                    </imageView>
+                    <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reX-mf-rbb">
+                        <rect key="frame" x="149.5" y="10" width="205.5" height="121.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe Robertsort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbK-bB-ZUo">
+                                <rect key="frame" x="10" y="5" width="128.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Italic" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wjdhewj d" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZG-Tz-4R3">
+                                <rect key="frame" x="10" y="26" width="185.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-cH-qNe">
+                                <rect key="frame" x="138.5" y="100.5" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="eIc-ST-Ek7"/>
+                                    <constraint firstAttribute="width" id="qxT-FZ-NfX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March 18, 10:17 am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-ra-ZuX">
+                                <rect key="frame" x="77" y="100.5" width="123.5" height="16"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30196078431372547" green="0.67843137254901964" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wvw-ra-ZuX" secondAttribute="trailing" constant="5" id="3O8-qb-KFx"/>
+                            <constraint firstItem="fbK-bB-ZUo" firstAttribute="top" secondItem="reX-mf-rbb" secondAttribute="top" constant="5" id="KRm-pm-CJN"/>
+                            <constraint firstItem="Wvw-ra-ZuX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WZG-Tz-4R3" secondAttribute="bottom" constant="5" id="NXd-J2-24T"/>
+                            <constraint firstAttribute="bottom" secondItem="Wvw-ra-ZuX" secondAttribute="bottom" constant="5" id="ODt-Fk-rTD"/>
+                            <constraint firstItem="WZG-Tz-4R3" firstAttribute="top" secondItem="fbK-bB-ZUo" secondAttribute="bottom" constant="5" id="PzG-4v-Imu"/>
+                            <constraint firstAttribute="trailing" secondItem="WZG-Tz-4R3" secondAttribute="trailing" constant="10" id="RuV-LL-aLM"/>
+                            <constraint firstItem="fbK-bB-ZUo" firstAttribute="trailing" secondItem="Y9x-cH-qNe" secondAttribute="trailing" id="cRv-wD-KGu"/>
+                            <constraint firstItem="Wvw-ra-ZuX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WZG-Tz-4R3" secondAttribute="leading" id="gZs-fj-aI1"/>
+                            <constraint firstItem="fbK-bB-ZUo" firstAttribute="leading" secondItem="reX-mf-rbb" secondAttribute="leading" constant="10" id="hdx-vp-aHk"/>
+                            <constraint firstItem="WZG-Tz-4R3" firstAttribute="leading" secondItem="fbK-bB-ZUo" secondAttribute="leading" id="tGW-St-Dct"/>
+                            <constraint firstItem="Y9x-cH-qNe" firstAttribute="centerX" secondItem="Wvw-ra-ZuX" secondAttribute="centerX" id="tMS-Ke-Vgh"/>
+                            <constraint firstItem="Wvw-ra-ZuX" firstAttribute="top" secondItem="Y9x-cH-qNe" secondAttribute="bottom" id="vnh-Ld-xMj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="reX-mf-rbb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="1hb-gz-wH6"/>
+                    <constraint firstItem="3Tp-jI-Ao0" firstAttribute="trailing" secondItem="reX-mf-rbb" secondAttribute="trailing" id="2d5-AM-bnb"/>
+                    <constraint firstAttribute="bottom" secondItem="reX-mf-rbb" secondAttribute="bottom" constant="10" id="C27-sq-hX5"/>
+                    <constraint firstAttribute="trailing" secondItem="reX-mf-rbb" secondAttribute="trailing" constant="10" id="G49-d5-NFT"/>
+                    <constraint firstItem="reX-mf-rbb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oKi-my-6y6"/>
+                    <constraint firstItem="3Tp-jI-Ao0" firstAttribute="top" secondItem="reX-mf-rbb" secondAttribute="top" id="zgw-hq-Szy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="Wvw-ra-ZuX" id="fLt-7m-YYn"/>
+                <outlet property="msgLabel" destination="WZG-Tz-4R3" id="4u7-TT-GXB"/>
+                <outlet property="senderLabel" destination="fbK-bB-ZUo" id="hHi-DE-9ck"/>
+                <outlet property="view" destination="reX-mf-rbb" id="xu3-W5-ybJ"/>
+            </connections>
+            <point key="canvasLocation" x="47.5" y="101"/>
+        </tableViewCell>
+    </objects>
+</document>

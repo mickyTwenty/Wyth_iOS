@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB_2.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+        <array key="GOTHIC_2.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="MultipleCheckboxCell" customModule="SeatUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="134.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKV-Tn-ko7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="134.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="container_active_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="N4C-Yi-mEI">
+                                <rect key="frame" x="10" y="11.5" width="12" height="12"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Time of Day:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-dE-6cR">
+                                <rect key="frame" x="32" y="8" width="79" height="17.5"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-GL-zLK" userLabel="Sep1">
+                                <rect key="frame" x="16" y="28.5" width="1" height="105"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="tOl-t7-vFx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWB-2q-aoO" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="32" y="28" width="72" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zf-jc-kyk" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="32" y="38.5" width="72" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufq-gf-oPe" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="114" y="67" width="71.5" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejr-1V-pOP" customClass="CheckBoxView" customModule="SeatUs" customModuleProvider="target">
+                                <rect key="frame" x="114" y="35" width="71.5" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lj-UF-4Ct">
+                                <rect key="frame" x="131" y="2" width="120" height="28"/>
+                                <color key="backgroundColor" red="0.9002417922" green="0.10886100679999999" blue="0.2406414449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="KZy-bk-v0z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <state key="normal" title="Decide Trip Time">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rideTimeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8D5-l7-Sl8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4dX-GL-zLK" firstAttribute="centerX" secondItem="N4C-Yi-mEI" secondAttribute="centerX" id="2zo-Au-9D7"/>
+                            <constraint firstItem="4dX-GL-zLK" firstAttribute="top" secondItem="N4C-Yi-mEI" secondAttribute="bottom" constant="5" id="3WR-1Q-i5y"/>
+                            <constraint firstItem="N4C-Yi-mEI" firstAttribute="leading" secondItem="pKV-Tn-ko7" secondAttribute="leading" constant="10" id="89i-kE-IlK"/>
+                            <constraint firstItem="0Lj-UF-4Ct" firstAttribute="centerY" secondItem="eT0-dE-6cR" secondAttribute="centerY" id="AaY-Qb-Nzi"/>
+                            <constraint firstItem="sWB-2q-aoO" firstAttribute="top" secondItem="eT0-dE-6cR" secondAttribute="bottom" constant="10" id="CrK-we-3ak"/>
+                            <constraint firstItem="eT0-dE-6cR" firstAttribute="centerY" secondItem="N4C-Yi-mEI" secondAttribute="centerY" id="Fg1-02-WXe"/>
+                            <constraint firstItem="Ufq-gf-oPe" firstAttribute="leading" secondItem="ejr-1V-pOP" secondAttribute="leading" id="LxI-Sv-CJ3"/>
+                            <constraint firstItem="5zf-jc-kyk" firstAttribute="top" secondItem="sWB-2q-aoO" secondAttribute="bottom" constant="5" id="Mn2-5J-TmX"/>
+                            <constraint firstAttribute="bottom" secondItem="5zf-jc-kyk" secondAttribute="bottom" constant="5" id="VOY-sO-Veq"/>
+                            <constraint firstItem="0Lj-UF-4Ct" firstAttribute="leading" secondItem="eT0-dE-6cR" secondAttribute="trailing" constant="20" id="azg-mS-Jcq"/>
+                            <constraint firstItem="Ufq-gf-oPe" firstAttribute="centerY" secondItem="5zf-jc-kyk" secondAttribute="centerY" id="eK9-9Z-0Mh"/>
+                            <constraint firstItem="eT0-dE-6cR" firstAttribute="top" secondItem="pKV-Tn-ko7" secondAttribute="topMargin" id="kao-A7-oP3"/>
+                            <constraint firstItem="5zf-jc-kyk" firstAttribute="leading" secondItem="eT0-dE-6cR" secondAttribute="leading" id="mSg-sC-6x5"/>
+                            <constraint firstItem="ejr-1V-pOP" firstAttribute="centerY" secondItem="sWB-2q-aoO" secondAttribute="centerY" id="o8b-BO-gZS"/>
+                            <constraint firstItem="eT0-dE-6cR" firstAttribute="leading" secondItem="N4C-Yi-mEI" secondAttribute="trailing" constant="10" id="qnx-k4-9gp"/>
+                            <constraint firstItem="ejr-1V-pOP" firstAttribute="leading" secondItem="sWB-2q-aoO" secondAttribute="trailing" constant="10" id="rxH-jb-WnK"/>
+                            <constraint firstItem="N4C-Yi-mEI" firstAttribute="top" secondItem="pKV-Tn-ko7" secondAttribute="top" constant="11.5" id="xBv-sU-i25"/>
+                            <constraint firstAttribute="bottom" secondItem="4dX-GL-zLK" secondAttribute="bottom" constant="1" id="xd0-jp-eLJ"/>
+                            <constraint firstItem="sWB-2q-aoO" firstAttribute="leading" secondItem="eT0-dE-6cR" secondAttribute="leading" id="xwB-mk-m9O"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pKV-Tn-ko7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G9L-Pk-Jxi"/>
+                    <constraint firstAttribute="bottom" secondItem="pKV-Tn-ko7" secondAttribute="bottom" id="N6v-iS-fku"/>
+                    <constraint firstAttribute="trailing" secondItem="pKV-Tn-ko7" secondAttribute="trailing" id="PXq-pI-r0K"/>
+                    <constraint firstItem="pKV-Tn-ko7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RJ7-51-zhW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="rideTimeButton" destination="0Lj-UF-4Ct" id="dbN-02-xY7"/>
+                <outlet property="titleLabel" destination="eT0-dE-6cR" id="wdf-Fw-bM9"/>
+                <outletCollection property="checkBoxViews" destination="sWB-2q-aoO" collectionClass="NSMutableArray" id="ulk-WQ-PpX"/>
+                <outletCollection property="checkBoxViews" destination="5zf-jc-kyk" collectionClass="NSMutableArray" id="apy-eJ-4Xx"/>
+                <outletCollection property="checkBoxViews" destination="Ufq-gf-oPe" collectionClass="NSMutableArray" id="AW3-DQ-yLZ"/>
+                <outletCollection property="checkBoxViews" destination="ejr-1V-pOP" collectionClass="NSMutableArray" id="RUo-zc-BeA"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="97.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="container_active_bullet" width="12" height="12"/>
+    </resources>
+</document>
